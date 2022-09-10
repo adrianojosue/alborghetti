@@ -1,0 +1,82 @@
+// Colors
+$color_primary: #27272A;
+$color_primary-darker: #1A1A1C;
+$color_primary-clearer: #38383B;
+
+$color_accent: #D01C1F;
+$color_accent-clearer: #F8C9CA;
+
+$color_warning: #DCED31;
+
+$color_ok: #0099ff;
+
+$color_text: #FAFAFA;
+$color_subtext: #BDBDBD;
+
+$color_price: #006400;
+$color_price-accent: #00FA00;
+
+// Opacities
+$opacity_primary: 0.96;
+$opacity_secondary: 0.64;
+
+// Radius
+$radius_primary: 1em;
+$radius_secondary: 0.75em;
+
+// Sizes
+
+// in px:
+$size_4px: 4px;
+$size_8px: 8px;
+$size_12px: 12px;
+$size_16px: 16px;
+$size_20px: 20px;
+$size_24px: 24px;
+$size_28px: 28px;
+$size_32px: 32px;
+$size_36px: 36px;
+$size_40px: 40px;
+$size_44px: 44px;
+$size_48px: 48px;
+$size_52px: 52px;
+$size_56px: 56px;
+$size_60px: 60px;
+$size_64px: 64px;
+$size_68px: 68px;
+$size_72px: 72px;
+$size_76px: 76px;
+$size_80px: 80px;
+$size_84px: 84px;
+$size_88px: 88px;
+$size_92px: 92px;
+$size_96px: 96px;
+$size_100px: 100px;
+$size_104px: 104px;
+$size_108px: 108px;
+
+//sizes
+$size_light: $size_4px;
+$size_thin: $size_8px;
+$size_small: $size_12px;
+$size_x-small: $size_16px;
+$size_medium: $size_24px;
+$size_large: $size_36px;
+$size_x-large: $size_48px;
+$size_z-large: $size_56px;
+
+// Blur effect
+
+$blur: saturate(180%) blur($size_medium);
+$blur_medium: saturate(180%) blur(3px);
+$blur_light: saturate(180%) blur(1px);
+
+// Shadows
+
+$shadow_1: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+$shadow_2: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+$shadow_3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+$shadow_4: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+$shadow_5: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+$shadow_accent: 0 $size_8px $size_16px rgba($color_accent-clearer, 1);

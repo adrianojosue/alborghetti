@@ -1,0 +1,31 @@
+.full_screen {
+    display: flex;
+    overflow: hidden;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    cursor: wait;
+
+    .logo {
+      width: 38px;
+      height: 56px;
+      border-radius: 12px;
+      margin: 0;
+      padding: 0;
+      animation: zoom-in-zoom-out 1s ease infinite;
+    }
+
+    @keyframes zoom-in-zoom-out {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.5, 1.5);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+}

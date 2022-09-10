@@ -1,0 +1,176 @@
+.cards-carousel {
+    /* display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 300px; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    overflow-y: hidden;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    overscroll-behavior-inline: contain;
+    padding: $size_small 0;
+
+    scroll-snap-type: inline mandatory;
+    column-gap: $size_small;
+
+    
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+
+    // Scrollbar
+    scrollbar-width: thin;
+    scrollbar-color: dark;
+
+    > * {
+        scroll-snap-align: center;
+    }
+
+    @media (min-width: 481px) {
+        padding: $size_medium 0;
+        column-gap: $size_medium;
+    }
+
+    @media (hover) {
+        overflow-x: hidden;
+    }
+
+    .card {
+        width: 300px;
+    }
+    
+    .card-carousel_container {
+
+        transform: translateX(calc(max(1024px, 100vw)/2 - 499px));
+
+        transition: all 0.3s;
+
+        &:last-child {
+            &::before {
+                content: '';
+                position: absolute;
+                width: $size_small;
+                height: 100%;
+                right: -$size_small;
+                pointer-events: none;
+            }
+        }
+        
+        @media (min-width: 481px) {
+            transform: translateX(calc(max(1024px, 100vw)/2 - 487px));
+
+            &:last-child {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: $size_medium;
+                    height: 100%;
+                    right: -$size_medium;
+                    pointer-events: none;
+                }
+            }
+
+        }
+    }
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: $size_medium;
+    padding: $size_medium;
+    justify-content: center;
+}
+
+.card {
+
+    background-color: $color_text;
+    color: $color_primary;
+    border-radius: $radius_primary;
+    overflow: hidden;
+    box-shadow: $shadow_4;
+
+    .card_images {
+        width: 100%;
+        height: 300px;
+        background-color: rgba($color_primary, 0.1);
+        border-bottom: 1px solid rgba($color_primary, 0.1);
+    }
+
+    .card_info {
+        width: 100%;
+        height: 100%;
+        padding: $size_medium;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        h1 {
+            font-size: $size_medium;
+        }
+
+        h1, p, li {
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .normal_price {
+            border-top: 1px solid $color_primary;
+            color: $color_price;
+            font-weight: bold;
+            font-size: 20px;
+            padding-top: $size_light;
+            margin-top: $size_medium;
+        }
+
+        ul {
+            display: inline-flex;
+            flex-wrap: wrap;
+
+            li {
+                flex-grow: 1;
+                flex-shrink: 1;
+            }
+        }
+
+        .container_item-color {
+            
+            display: flex;
+            justify-content: flex-start;
+            justify-items: center;
+            align-items: center;
+            margin-top: $size_light;
+
+            p {
+                font-size: $size_small;
+                color: $color_primary-clearer;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+
+            .item_color {
+                color: #fff;
+                margin-left: $size_thin;
+                border: solid 1px rgba($color_primary, 1);
+                border-radius: $radius_primary;
+                font-size: $size_12px;
+                flex-grow: 0;
+                width: $size_x-small;
+                height: $size_x-small;
+            }
+        }
+    }
+    @media (hover) {
+        &:hover {
+            transition: all .3s cubic-bezier(0,0,.5,1);
+            transform: scale3d(1.02,1.02,1.02);
+            box-shadow: $shadow_3;
+        }
+    }
+}

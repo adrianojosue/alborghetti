@@ -1,0 +1,91 @@
+footer {
+    width: 100%;
+    height: auto;
+    padding: $size_medium;
+
+    * {
+        color: $color_subtext;
+        svg {
+            path {
+                fill: $color_subtext;
+            }
+        }
+    }
+
+    .footer_logo {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: $size_medium;
+        border-bottom: 1px solid $color_primary-clearer;
+
+        svg {
+            width: 100%;
+            path {
+                fill: $color_subtext;
+            }
+        }
+    }
+
+    .footer_social-navbar {
+        @extend .footer_navbar;
+        flex-direction: row !important;
+        border-top: none !important;
+        width: auto !important;
+        padding: $size_small 0 !important;
+        border-bottom: 1px solid $color_primary-clearer;
+        a {
+            border: none !important;
+            width: auto !important;
+        }
+    }
+
+    .footer_navbar {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        align-content: center;
+        width: 100%;
+        padding: $size_medium 0;
+        gap: $size_medium;
+        flex-direction: column;
+
+        /* flex-direction: column; */
+
+        @media ( min-width: 481px ) {
+            flex-direction: row;
+        }
+
+        a {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            border: 1px solid $color_primary-clearer;
+            padding: $size_thin;
+            border-radius: $radius_primary;
+            align-items: center;
+            justify-content: center;
+            @media ( min-width: 481px ) {
+                width: auto;
+                border: none;
+            }
+            @media (hover) {
+                &:hover {
+                    background-color: $color_primary-clearer;
+                    transition: background-color .3s cubic-bezier(0,0,.5,1);
+
+                    color: $color_text;
+
+                    svg {
+                        path {
+                            fill: $color_text;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+}

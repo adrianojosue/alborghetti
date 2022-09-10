@@ -1,0 +1,18 @@
+// Base
+
+@import './base/settings';
+@import './base/base';
+@import "the-new-css-reset/css/reset.css";
+
+// Components
+
+@import './component/navbar';
+@import './component/cards';
+@import './component/search';
+@import './component/footer';
+@import './component/notfound';
+@import './component/shoesScreen';
+@import './component/authScreen';
+@import './component/checkingAuth';
+@import './component/whatsNewScreen';
+@import './component/accountScreen';
