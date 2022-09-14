@@ -1,3 +1,10 @@
+# Alborghetti
+Alborghetti, and the Alborghetti logo are trademarks and/or registered trademarks in the Dominican Republic and/or other countries.
+
+## Licence
+
+[The Alborghetti e-commerce web app project is licensed under the Apache License 2.0](LICENSE)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
