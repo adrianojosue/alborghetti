@@ -1,13 +1,22 @@
 # Alborghetti
-Alborghetti, and the Alborghetti logo are trademarks and/or registered trademarks in the Dominican Republic and/or other countries.
+**Alborghetti**, and the **Alborghetti logo** are trademarks and/or registered trademarks in the Dominican Republic and/or other countries.
 
 ## Licence
 
-[The Alborghetti e-commerce web app project is licensed under the Apache License 2.0](LICENSE)
+>The **Alborghetti e-commerce web app project** is licensed under the [Apache License 2.0](LICENSE)
 
 ## Project under develpment
 
-The Alborghetti e-commerce web app project is in currently development but you can [test right now here](https://alborghettistore.web.app)
+The **Alborghetti e-commerce web app project** is in currently development but you can [test right now here](https://alborghettistore.web.app)
+
+## Built with
+
+* React
+* Redux
+* JavaScript
+* Sass
+* HTML5
+* Firebase
 
 # Getting Started with Create React App
 
