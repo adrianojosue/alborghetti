@@ -5,6 +5,10 @@ Alborghetti, and the Alborghetti logo are trademarks and/or registered trademark
 
 [The Alborghetti e-commerce web app project is licensed under the Apache License 2.0](LICENSE)
 
+## Project under develpment
+
+The Alborghetti e-commerce web app project is in currently development but you can [test right now here](https://alborghettistore.web.app)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
