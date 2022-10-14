@@ -3,18 +3,17 @@ import { createSlice } from '@reduxjs/toolkit';
 export const itemsSlice = createSlice({
     name: 'items',
     initialState: {
-        page: 0,
         items: [],
         isLoading: false,
+        errorMessage: null,
     },
     reducers: {
-        startLoadingItems: (state, /* action */) => {
+        startLoadingItems: (state) => {
             state.isLoading = true;
         },
         setItems: (state, action) => {
             state.isLoading = false;
-            state.page = action.payload.page;
-            state.items = action.payload.items;
+            state.items = action.payload;
         }
     },
 })

@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { startLogoutFirebase } from '../../store/auth';
 
@@ -9,6 +9,7 @@ export const Navbar = () => {
 
   const [sidenav, setSidenav] = useState(false);
   const { displayName, photoURL, email } = useSelector( state => state.auth);
+  const { items } = useSelector( state => state.bag );
 
   window.addEventListener('scroll', () => {
     document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`)
@@ -43,6 +44,12 @@ export const Navbar = () => {
   function startDrag(event) {
     drag.start(event)
   }
+
+  // List of items in the bag
+  const listBagItems = items.length;
+  const NewListBagItems = useMemo( () => {
+    return listBagItems > 9 ? '9+' : listBagItems;
+  }, [listBagItems]);
 
   return (
     <>
@@ -92,9 +99,9 @@ export const Navbar = () => {
             </div>
             <div className="right-items">
               <NavLink
-                className={ ({ isActive }) => 'active-notification' + ( isActive ? ' active' : '') }
+                className={ ( listBagItems > 0 ) ? ({ isActive }) => 'active-notification' + ( isActive ? ' active' : '') : '' }
                 to="/bag"
-                notification='9'
+                notification={ NewListBagItems }
               >
                   <svg width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0.495605 19.618C0.495605 20.8092 0.798111 21.7025 1.40312 22.2981C2.00814 22.8936 2.91093 23.1914 4.11151 23.1914H17.228C18.2395 23.1914 19.0289 22.8936 19.5961 22.2981C20.1633 21.7025 20.4469 20.8092 20.4469 19.618V8.20312C20.4469 7.01201 20.1444 6.11867 19.5394 5.5231C18.9344 4.92754 18.0316 4.62975 16.831 4.62975H15.2003C15.1719 3.82622 14.9403 3.08885 14.5055 2.41767C14.0706 1.74648 13.4987 1.20764 12.7897 0.801145C12.0807 0.394653 11.3055 0.191406 10.4642 0.191406C9.63226 0.191406 8.86182 0.394653 8.15282 0.801145C7.44382 1.20764 6.87189 1.74648 6.43703 2.41767C6.00218 3.08885 5.77057 3.82622 5.74221 4.62975H4.11151C2.91093 4.62975 2.00814 4.92754 1.40312 5.5231C0.798111 6.11867 0.495605 7.01201 0.495605 8.20312V19.618ZM7.78414 4.62975C7.80304 4.15709 7.93539 3.73169 8.18119 3.35356C8.42697 2.97543 8.75074 2.67529 9.15251 2.45312C9.55428 2.23096 9.9915 2.11988 10.4642 2.11988C10.9463 2.11988 11.3859 2.23096 11.7829 2.45312C12.1799 2.67529 12.5014 2.97543 12.7471 3.35356C12.9929 3.73169 13.1253 4.15709 13.1442 4.62975H7.78414Z" fill="none"/>

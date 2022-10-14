@@ -70,12 +70,6 @@ span {
 
   & > * {
     color: $color_text;
-    margin-top: $size_small;
-
-    @media (min-width: 481px) {
-      margin-top: 0;
-      margin-left: $size_thin;
-    }
   }
   a {
     @media (hover) {
@@ -89,15 +83,21 @@ b {
   margin-bottom: $size_small;
 }
 
-svg {
-  path {
+svg:not(.colored) {
+  path:not(.colored) {
     fill: $color_text;
   }
   &.color_ok {
     path {
         fill: $color_ok !important;
     }
+  }
 }
+
+*:disabled,
+*[disabled]{
+    opacity: 0.2;
+    cursor: default;
 }
 
 .content_normal {
@@ -106,10 +106,6 @@ svg {
   max-width: 1024px;
   padding: 0 $size_medium $size_medium;
   margin: 0 auto;
-
-  /* @media ( min-width: 481px ) {
-    padding: 0 $size_medium $size_medium;
-  } */
 
 }
 
@@ -136,6 +132,31 @@ svg {
 
 }
 
+.content_left-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: $size_medium;
+
+  @media (min-width: 720px) {
+      flex-direction: row;
+  }
+
+  .content_left {
+    order: 1;
+    width: 100%;
+  }
+  .content_right {
+    display: flex;
+    order: 2;
+    width: 100%;
+    @media (min-width: 720px) {
+      width: 480px;
+    }
+  }
+}
+
 // Spaces
 .space {
   width: 100%;
@@ -160,7 +181,7 @@ button, .button, [type="button"] {
   &:disabled,
   &[disabled]{
     opacity: $opacity_primary;
-    cursor: not-allowed;
+    cursor: default;
   }
 
   &.scroll-button_back {
@@ -272,20 +293,43 @@ button, .button, [type="button"] {
   &::after {
     content: attr(notification);
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: $size_x-small;
-    height: $size_x-small;
-    border-radius: 50%;
+    min-width: $size_20px;
+    height: $size_20px;
+    border-radius: $size_48px;
     background-color: $color_accent;
     color: $color_accent-clearer;
+    font-weight: bold;
+    line-height: $size_20px;
     position: absolute;
+    z-index: inherit;
     pointer-events: none;
-    top: 38px;
-    right: 120px;
+    padding-left: $size_light;
+    padding-right: $size_light;
+    margin-top: $size_small;
+    margin-right: $size_small;
     font-size: $size_small;
     overflow: hidden;
     box-shadow: $shadow_5;
   }
+}
+
+.line-clamp_1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow-y: hidden;
+}
+.line-clamp_2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow-y: hidden;
+}
+.sticky {
+  position: sticky;
+  top: calc(72px + #{$size_medium});
+  left: 0;
+  right: 0;
 }

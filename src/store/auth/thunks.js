@@ -1,4 +1,5 @@
 import { loginWithEmailAndPassword, createAccountWithEmailAndPassword, signInWithGoogle, forgotPassword, logoutFirebase, emailVerification } from "../../firebase/providers";
+import { onLogoutClearBagItems } from "../bag";
 import { checkingCredentials, logout, login, doingAuthenticated, doneAuthenticated, doingNotAuthenticated, doneNotAuthenticated } from "./";
 
 export const checkingAuthentication = ( email, password ) => {
@@ -60,6 +61,7 @@ export const startForgotPassword = ({ email }) => {
 export const startLogoutFirebase = () => {
     return async ( dispatch ) => {
         await logoutFirebase();
+        dispatch( onLogoutClearBagItems() );
         dispatch( logout() );
     }
 }

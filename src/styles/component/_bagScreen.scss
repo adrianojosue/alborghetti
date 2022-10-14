@@ -1,0 +1,95 @@
+span {
+    display: block;
+}
+.price {
+    @extend span;
+    display: inline-block;
+    color: $color_price-accent;
+}
+.bag_info {
+    margin-bottom: $size_x-large;
+}
+.bag_items {
+    display: flex;
+    flex-direction: column;
+    gap: $size_medium;
+
+    .bag_item {
+        width: 100%;
+        border-bottom: 1px solid $color_primary-clearer;
+        padding-bottom: $size_medium;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: $size_medium;
+
+        &:last-child {
+            border-bottom: none;
+        }
+        
+        .content {
+
+            display: flex;
+            flex-direction: row;
+            gap: $size_medium;
+
+            .image {
+                width: 120px;
+                height: 120px;
+                border-radius: $radius_primary;
+                box-shadow: $shadow_5;
+                border: 1px solid rgba($color_primary, 0.1);
+                background-color: $color_text;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                object-fit: cover;
+                aspect-ratio: 1 / 1;
+                align-self: stretch;
+            }
+            .info {
+                .price {
+                    margin-top: $size_small;
+                }
+            }
+        }
+
+       .options {
+            button {
+                background-color: $color_primary-clearer;
+                border: none;
+                align-self: flex-end;
+            }
+       }
+    }
+}
+.bag_summary {
+    display: flex;
+    flex-direction: column;
+    gap: $size_medium;
+    p{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        &:last-child {
+            margin-top: $size_large;
+            padding-top: $size_medium;
+            border-top: 1px solid rgba($color_primary-clearer, $opacity_primary);
+        }
+
+    }
+    button {
+        background-color: $color_black;
+        border: none;
+        span {
+            color: $color_text;
+            font-family: 'Roboto';
+            font-size: 22px;
+        }
+        svg {
+            width: $size_x-small;
+            height: $size_x-small;
+            margin: 0 $size_light 0 $size_thin;
+        }
+    }
+}

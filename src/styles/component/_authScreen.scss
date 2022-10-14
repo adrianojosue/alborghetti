@@ -127,11 +127,15 @@
                     }
                   
                     &.google {
-                      background-color: $color_primary-darker;
+                      background-color: $color_black;
                       box-shadow: none;
                       font-family: 'Roboto';
                       padding-left: $size_small;
                       padding-right: $size_small;
+
+                      span {
+                        color: $color_text;
+                      }
                   
                       svg {
                         margin-right: $size_thin;

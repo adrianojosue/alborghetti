@@ -11,6 +11,8 @@ import { MensScreen } from '../components/mens/MensScreen';
 import { WomensScreen } from '../components/womens/WomensScreen';
 import { NotFoundScreen } from '../components/NotFoundScreen';
 import { AccountScreen } from "../components/account/accountScreen";
+import { BagScreen } from "../components/bag/BagScreen";
+import { ItemsData } from "../components/items/ItemsData";
 
 export const DashboardRoutes = () => {
 
@@ -31,6 +33,8 @@ export const DashboardRoutes = () => {
               <Route path="/shoes/mens" element={<MensScreen />} />
               <Route path="/shoes/womens" element={<WomensScreen />} />
               <Route path="/account" element={<AccountScreen />} />
+              <Route path="/bag" element={<BagScreen />} />
+              <Route path="/items" element={<ItemsData />} />
               <Route path="/" element={<WhatsNewScreen />} />
               <Route path="*" element={ <NotFoundScreen /> } />
               <Route path="/auth/*" element={ <Navigate to='/' /> } />

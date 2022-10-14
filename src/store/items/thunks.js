@@ -1,16 +1,19 @@
-import { alborghettiApi } from "../../../api/alborghettiApi";
-import { startLoadingItems, setItems } from "./itemsSlice";
+import { collection, getDocs } from 'firebase/firestore/lite';
+import { firebaseDB } from '../../firebase/config';
+import { startLoadingItems, setItems } from "./";
 
-export const getItems = ( page = 0 ) => {
-    return async ( dispatch, getState ) => {
+export const startGetItems = () => {
+
+    return async ( dispatch ) => {
         dispatch( startLoadingItems() );
+        const docs = await getDocs( collection( firebaseDB, 'items' ) );
 
-        const { data } = await alborghettiApi.get(`/pokemon?limit=10&offset=${ page * 10 }`);
+        const items = []
+        docs.forEach( doc => {
+            items.push({ id: doc.id, ...doc.data() });
+        });
 
-        dispatch( setItems({
-            items: data.results,
-            page: page + 1,
-        }) );
-
+        dispatch( setItems( items ) );
     }
+
 }

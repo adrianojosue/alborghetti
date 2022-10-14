@@ -1,11 +1,11 @@
 export const shoes = [
     {
-        'id': '0',
+        'id': '6tSWbcbe5G',
         'name': 'Embellished Vinyl Heeled Shoes',
-        'brand': 'alborghetti',
-        'type': 'shoes',
+        'brand': 'Alborghetti',
+        'type': 'Shoes',
         'gender': [
-            'womens',
+            'Womens',
         ],
         'size': [
             '5',
@@ -17,11 +17,8 @@ export const shoes = [
             '8',
             '8.5',
         ],
-        'collection': {
-            'collection_id': 1,
-            'collection_name': 'Colección de Primavera'
-        },
-        'model': 'classic',
+        'collection': 'Primavera',
+        'model': 'Classic',
         'description': 'Vinyl slingback shoes. Front rhinestone embellishment. AIRFIT®. Flexible technical sole made of latex foam designed to offer increased comfort.',
         'colors': [
             {
@@ -33,6 +30,7 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/V/1/1/p/2232/910/111/2/w/1126/2232910111_6_2_1.jpg?ts=1646236159131',
                     'https://static.zara.net/photos///2022/V/1/1/p/2232/910/111/2/w/1126/2232910111_6_4_1.jpg?ts=1646236159991',
                 ],
+                'price': 4995,
             },
             {
                 'color_id': 1,
@@ -43,22 +41,19 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/I/1/1/p/2224/010/075/2/w/1126/2224010075_6_2_1.jpg?ts=1659083327709',
                     'https://static.zara.net/photos///2022/I/1/1/p/2224/010/075/2/w/1126/2224010075_6_4_1.jpg?ts=1659083329468',
                 ],
+                'price': 5995,
             },
         ],
-        'price': {
-            'normal_price': '$5,995',
-            'special_price': '$4,990'
-        },
         'launched_at': '01/04/2012', // Day/Month/Year
         'available': true,
     },
     {
-        'id': '1',
+        'id': 'yTawjODLcy',
         'name': 'Soft Leather Loafers',
-        'brand': 'alborghetti',
-        'type': 'shoes',
+        'brand': 'Alborghetti',
+        'type': 'Shoes',
         'gender': [
-            'mens',
+            'Mens',
         ],
         'size': [
             '5',
@@ -70,11 +65,8 @@ export const shoes = [
             '8',
             '8.5',
         ],
-        'collection': {
-            'collection_id': 1,
-            'collection_name': 'Colección de Primavera'
-        },
-        'model': 'classic',
+        'collection': 'Primavera',
+        'model': 'Classic',
         'description': 'Loafers. Leather upper. Ornamental saddle detail at instep. Thick black soles with rim detail.',
         'colors': [
             {
@@ -86,6 +78,7 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/V/1/2/p/2500/921/102/2/w/1126/2500921102_6_1_1.jpg?ts=1645089585715',
                     'https://static.zara.net/photos///2022/V/1/2/p/2500/921/102/2/w/1126/2500921102_6_6_1.jpg?ts=1645089586433',
                 ],
+                'price': 3995,
             },
             {
                 'color_id': 1,
@@ -96,22 +89,19 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/I/1/2/p/2500/920/010/2/w/1126/2500920010_6_3_1.jpg?ts=1656338612011',
                     'https://static.zara.net/photos///2022/V/1/2/p/2500/920/010/2/w/1126/2500920010_6_6_1.jpg?ts=1637143088896',
                 ],
+                'price': 4200,
             },
         ],
-        'price': {
-            'normal_price': 'RD$3,995',
-            'special_price': ''
-        },
         'launched_at': '01/04/2022', // Day/Month/Year
         'available': false,
     },
     {
-        'id': '2',
+        'id': 'K9BWnZjGxE',
         'name': 'High Heeled Rhinestone Leather Shoes',
-        'brand': 'alborghetti',
-        'type': 'shoes',
+        'brand': 'Alborghetti',
+        'type': 'Shoes',
         'gender': [
-            'womens',
+            'Womens',
         ],
         'size': [
             '5',
@@ -120,11 +110,8 @@ export const shoes = [
             '6.5',
             '7',
         ],
-        'collection': {
-            'collection_id': 1,
-            'collection_name': 'Colección de Primavera'
-        },
-        'model': 'classic',
+        'collection': 'Primavera',
+        'model': 'Classic',
         'description': 'Slingback heels made of leather. Woven rhinestone decoration. Pointed toe. AIRFIT®. Flexible technical sole made of polyurethane foam designed to offer increased.',
         'colors': [
             {
@@ -136,22 +123,19 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/I/1/1/p/1207/011/097/2/w/1126/1207011097_6_2_1.jpg?ts=1657815352583',
                     'https://static.zara.net/photos///2022/I/1/1/p/1207/011/097/2/w/1126/1207011097_6_4_1.jpg?ts=1658301503040',
                 ],
+                'price': 6995,
             },
         ],
-        'price': {
-            'normal_price': 'RD$6,995',
-            'special_price': ''
-        },
         'launched_at': '01/04/2022', // Day/Month/Year
         'available': true,
     },
     {
-        'id': '3',
+        'id': '1rmmpNitZB',
         'name': 'Thick Sole Leather Loafers',
-        'brand': 'alborghetti',
-        'type': 'shoes',
+        'brand': 'Alborghetti',
+        'type': 'Shoes',
         'gender': [
-            'mens',
+            'Mens',
         ],
         'size': [
             '5',
@@ -163,11 +147,8 @@ export const shoes = [
             '8',
             '8.5',
         ],
-        'collection': {
-            'collection_id': 1,
-            'collection_name': 'Colección de Primavera'
-        },
-        'model': 'classic',
+        'collection': 'Primavera',
+        'model': 'Classic',
         'description': 'Loafers. Made of satin finish leather. Saddle detail at instep with tonal topstitching. Decorative seam detail around the entire welt of the shoe. Thick treaded tonal soles. Rounded shape.',
         'colors': [
             {
@@ -179,22 +160,19 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/I/1/2/p/2621/920/120/2/w/1126/2621920120_6_2_1.jpg?ts=1659541995110',
                     'https://static.zara.net/photos///2022/I/1/2/p/2621/920/120/2/w/1126/2621920120_6_6_1.jpg?ts=1659541995720',
                 ],
+                'price': 4990,
             },
         ],
-        'price': {
-            'normal_price': '$5,995',
-            'special_price': '$4,990'
-        },
         'launched_at': '01/04/2022', // Day/Month/Year
         'available': true,
     },
     {
-        'id': '4',
+        'id': 'vsYHtzJygI',
         'name': 'Block Heel Fabric Shoes',
-        'brand': 'alborghetti',
-        'type': 'shoes',
+        'brand': 'Alborghetti',
+        'type': 'Shoes',
         'gender': [
-            'womens',
+            'Womens',
         ],
         'size': [
             '5',
@@ -206,11 +184,8 @@ export const shoes = [
             '8',
             '8.5',
         ],
-        'collection': {
-            'collection_id': 1,
-            'collection_name': 'Colección de Primavera'
-        },
-        'model': 'classic',
+        'collection': 'Primavera',
+        'model': 'Classic',
         'description': 'Fabric block heel pumps. Squared vamp detail. Pointed toe.',
         'colors': [
             {
@@ -222,22 +197,19 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/I/1/1/p/2227/910/040/2/w/1126/2227910040_6_2_1.jpg?ts=1660145574466',
                     'https://static.zara.net/photos///2022/I/1/1/p/2227/910/040/2/w/1126/2227910040_6_3_1.jpg?ts=1660139401919',
                 ],
+                'price': 5990,
             },
         ],
-        'price': {
-            'normal_price': '$5,995',
-            'special_price': '$4,990'
-        },
         'launched_at': '01/04/2022', // Day/Month/Year
         'available': true,
     },
     {
-        'id': '5',
+        'id': '0yPI7TmjGW',
         'name': 'Single Color Boat Shoes',
-        'brand': 'alborghetti',
-        'type': 'shoes',
+        'brand': 'Alborghetti',
+        'type': 'Shoes',
         'gender': [
-            'mens',
+            'Mens',
         ],
         'size': [
             '5',
@@ -249,11 +221,8 @@ export const shoes = [
             '8',
             '8.5',
         ],
-        'collection': {
-            'collection_id': 1,
-            'collection_name': 'Colección de Primavera'
-        },
-        'model': 'athletic',
+        'collection': 'Primavera',
+        'model': 'Athletic',
         'description': 'Athletic boat shoes. Black upper. Laces with three pairs of eyelets. Tonal rolled seam detail. Tonal thick sole.',
         'colors': [
             {
@@ -265,22 +234,19 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/I/1/2/p/2506/020/040/2/w/1126/2506020040_6_2_1.jpg?ts=1659513028345',
                     'https://static.zara.net/photos///2022/I/1/2/p/2506/020/040/2/w/1126/2506020040_6_3_1.jpg?ts=1659513028722',
                 ],
+                'price': 4990,
             },
         ],
-        'price': {
-            'normal_price': '$5,995',
-            'special_price': '$4,990'
-        },
         'launched_at': '01/04/2022', // Day/Month/Year
         'available': true,
     },
     {
-        'id': '6',
+        'id': 'ZeoLGD93SY',
         'name': 'Ankle Strap Heeled Platform Shoes',
-        'brand': 'alborghetti',
-        'type': 'shoes',
+        'brand': 'Alborghetti',
+        'type': 'Shoes',
         'gender': [
-            'womens',
+            'Womens',
         ],
         'size': [
             '5',
@@ -292,11 +258,8 @@ export const shoes = [
             '8',
             '8.5',
         ],
-        'collection': {
-            'collection_id': 1,
-            'collection_name': 'Colección de Primavera'
-        },
-        'model': 'platforms',
+        'collection': 'Primavera',
+        'model': 'Platforms',
         'description': 'Ankle strap chunky heeled platform shoes. Buckled strap closure at ankle. AIRFIT®. Flexible technical sole made of latex foam designed to offer increased comfort.',
         'colors': [
             {
@@ -308,6 +271,7 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/I/1/1/p/3216/010/040/2/w/1126/3216010040_6_2_1.jpg?ts=1657612598768',
                     'https://static.zara.net/photos///2022/I/1/1/p/3216/010/040/2/w/1126/3216010040_6_4_1.jpg?ts=1657612599146',
                 ],
+                'price': 5990,
             },
             {
                 'color_id': 1,
@@ -318,33 +282,27 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/I/1/1/p/3216/010/081/2/w/1126/3216010081_6_2_1.jpg?ts=1657612327028',
                     'https://static.zara.net/photos///2022/I/1/1/p/3216/010/081/2/w/1126/3216010081_6_4_1.jpg?ts=1657612317394',
                 ],
+                'price': 3995,
             },
         ],
-        'price': {
-            'normal_price': '$5,995',
-            'special_price': '$4,990'
-        },
         'launched_at': '01/04/2022', // Day/Month/Year
         'available': true,
     },
     {
-        'id': '7',
+        'id': 'Vh1Ta0-ngJ',
         'name': 'Leather Monk Shoes',
-        'brand': 'alborghetti',
-        'type': 'shoes',
+        'brand': 'Alborghetti',
+        'type': 'Shoes',
         'gender': [
-            'mens',
+            'Mens',
         ],
         'size': [
             '6',
             '7',
             '8',
         ],
-        'collection': {
-            'collection_id': 0,
-            'collection_name': 'spring_collection'
-        },
-        'model': 'classic',
+        'collection': 'Primavera',
+        'model': 'Classic',
         'description': 'Brown leather shoes. Monk style. Closure with two metal buckles. Leather insoles. Semi-pointed toe. Brown soles.',
         'colors': [
             {
@@ -356,12 +314,9 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/I/1/2/p/2426/920/105/2/w/1126/2426920105_6_2_1.jpg?ts=1651147199442',
                     'https://static.zara.net/photos///2022/I/1/2/p/2426/920/105/2/w/1126/2426920105_6_6_1.jpg?ts=1651147199568',
                 ],
+                'price': 5400,
             },
         ],
-        'price': {
-            'normal_price': 'RD$4,995',
-            'special_price': ''
-        },
         'launched_at': '01/04/2022', // Day/Month/Year
         'available': true,
     },

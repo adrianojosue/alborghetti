@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-/* import { shoes } from '../../data/shoes'; */
 import { motion } from "framer-motion";
 
 export const ShoesCards = ({
@@ -14,7 +13,6 @@ export const ShoesCards = ({
     model,
     description,
     colors,
-    price,
     images,
     launched_at,
     available,
@@ -54,7 +52,7 @@ export const ShoesCards = ({
                                 })
                             }
                         </ul>
-                        <ul className="container_item-price"><li className='normal_price'> { price.normal_price } </li></ul>
+                        <ul className="container_item-price"><li className='normal_price'>RD${ colors[0].price }</li></ul>
                     </div>
                 </motion.article>
             </Link>

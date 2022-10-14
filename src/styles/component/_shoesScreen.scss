@@ -38,6 +38,9 @@
             &:hover {
                 background-color: rgba($color_primary-clearer, $opacity_primary);
                 transition: background-color .3s cubic-bezier(0,0,.5,1);
+                &:disabled, &[disabled] {
+                    background-color: $color_primary;
+                }
             }
         }
     }
@@ -101,7 +104,7 @@
         flex-direction: row;
     }
 
-    .content_left {
+    .content_left_item-info {
         order: 1;
         width: 100%;
         margin-top: $size_medium;
