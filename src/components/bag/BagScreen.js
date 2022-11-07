@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
-import { startDeletingBagItem } from '../../store/bag';
+import { startDeletingBagItem, startOnSaveQuantityItem } from '../../store/bag';
 import { priceFormat } from '../../helpers/priceFormat';
 
 export const BagScreen = () => {
@@ -15,7 +15,7 @@ export const BagScreen = () => {
 
     const listBagItems = items.length;
 
-    const itemPrices = items.map( item => item.price);
+    const itemPrices = items.map( item => item.price * item.quantity);
     const subtotal = itemPrices.reduce((sum, item) => sum + item, 0);
     const itbis = Math.floor(subtotal*18)/100;
     const delivery = subtotal !== 0 ? 850 : 0;
@@ -30,6 +30,13 @@ export const BagScreen = () => {
     const onBuyWithGooglePay = () => {
         alert(`Hi ${displayName}, Currently you cannot buy at Alborghetti, we are working on this functionality.`);
     }
+
+    const quantityOptions = [
+        { value: 1, label: '1' },
+        { value: 2, label: '2' },
+        { value: 3, label: '3' },
+        { value: 4, label: '4' },
+    ]
 
     return(
         <>
@@ -55,7 +62,7 @@ export const BagScreen = () => {
                                                 <div className="info">
                                                     <h2 className="line-clamp_2">{item.name}</h2>
                                                     <span className="line-clamp_1">{item.color}</span>
-                                                    <p className="price line-clamp_1">{priceFormat(item.price)}</p>
+                                                    <p className="price line-clamp_1">{priceFormat(item.price * item.quantity)}</p>
                                                 </div>
                                             </div>
                                         </Link>
@@ -92,6 +99,30 @@ export const BagScreen = () => {
                                                     }
                                                 </svg>
                                             </button>
+                                            <select
+                                                name="quantity"
+                                                id={ item.id }
+                                                className="item_info-quantity"
+                                                onChange={
+                                                    (e) => {
+                                                        e.preventDefault();
+                                                        dispatch( startOnSaveQuantityItem(item.id, Number(e.target.value)) );
+                                                    }
+                                                }
+                                                value={ item.quantity }
+                                                disabled={ isSaving }
+                                            >
+                                                {
+                                                    quantityOptions.map( ( quantity, index ) => (
+                                                        <option
+                                                            value={ quantity.value }
+                                                            key={ index }
+                                                        >
+                                                            { quantity.label }
+                                                        </option>
+                                                    ))
+                                                }
+                                            </select>
                                         </div>
                                     </li>
                                 ))

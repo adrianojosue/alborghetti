@@ -28,7 +28,7 @@ export const bagSlice = createSlice({
             state.isSaving = false;
             state.items = state.items.filter( item => item.id !== action.payload );
             
-        }
+        },
     },
 })
 

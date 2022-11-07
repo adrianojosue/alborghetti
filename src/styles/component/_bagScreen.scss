@@ -55,6 +55,10 @@ span {
         }
 
        .options {
+            display: flex;
+            flex-direction: column;
+            gap: $size_light;
+            justify-content: space-between;
             button {
                 background-color: $color_primary-clearer;
                 border: none;

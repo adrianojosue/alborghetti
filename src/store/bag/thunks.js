@@ -1,4 +1,4 @@
-import { collection, deleteDoc, doc, setDoc } from 'firebase/firestore/lite';
+import { collection, deleteDoc, doc, setDoc, updateDoc } from 'firebase/firestore';
 import { firebaseDB } from '../../firebase/config';
 import { loadBagItems } from '../../helpers';
 
@@ -41,3 +41,19 @@ export const startDeletingBagItem = (id) => {
     }
 }
 
+export const startOnSaveQuantityItem = (id, quantityItem) => {
+
+    return async ( dispatch, getState ) => {
+        dispatch( savingBagItems() )
+        const { uid } = getState().auth;
+        const docRef = doc( firebaseDB, `bag/users/${uid}/${id}` );
+
+        await updateDoc( docRef, {
+            quantity: quantityItem,
+        });
+
+        const items = await loadBagItems( uid );
+        dispatch( setBagItems( items ) );
+    }
+
+}

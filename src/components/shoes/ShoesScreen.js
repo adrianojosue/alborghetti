@@ -49,6 +49,7 @@ export const ShoesScreen = () => {
     color: itemColor.color_name,
     image: itemColor.backgroundImage[0],
     price: itemColor.price,
+    quantity: Number(1),
     date: new Date().getTime(),
   }
 
@@ -136,6 +137,7 @@ export const ShoesScreen = () => {
                 <p>{ shoe.description }</p>
 
                 <div className="item_info-options">
+                  
                   <ul className="item_info_price">
                     <li>{ priceFormat(itemColor.price) }</li>
                   </ul>
@@ -149,7 +151,7 @@ export const ShoesScreen = () => {
                         </svg>
                         {
                           isSaving
-                          ? 'Adding...'
+                          ? 'Loading...'
                           : 'Add to bag'
                         }
                       </button>

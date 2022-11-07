@@ -170,7 +170,7 @@ export const Navbar = () => {
                     </svg>
                 }
               </div>
-              <span>
+              <span className='line-clamp_1'>
                 {
                   (!!displayName === true)
                   ? displayName

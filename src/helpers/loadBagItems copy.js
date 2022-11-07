@@ -1,4 +1,4 @@
-import { collection, getDocs } from "firebase/firestore"
+import { collection, getDocs } from "firebase/firestore/lite"
 import { firebaseDB } from "../firebase/config"
 
 export const loadBagItems = async ( uid = '' ) => {

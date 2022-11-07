@@ -266,7 +266,7 @@ button, .button, [type="button"] {
   svg {
     margin-right: $size_thin;
     path {
-      fill: $color_primary-darker;
+      fill: $color_primary-darker !important;
     }
   }
 }
@@ -332,4 +332,26 @@ button, .button, [type="button"] {
   top: calc(72px + #{$size_medium});
   left: 0;
   right: 0;
+}
+
+select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: $size_56px;
+  height: $size_56px;
+  border: solid 1px rgba($color_primary-clearer, $opacity_primary);
+  background-color: $color_primary !important;
+  border-radius: $radius_primary;
+  cursor: pointer;
+  text-align-last: center;
+  text-align: center;
+  direction: rtl !important;
+
+  &:disabled,
+  &[disabled]{
+    opacity: $opacity_primary;
+    color: rgba($color_subtext, $opacity_secondary);
+    cursor: default;
+  }
 }
