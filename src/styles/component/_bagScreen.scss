@@ -82,7 +82,7 @@ span {
         }
 
     }
-    button {
+    button, .button, [type="button"] {
         background-color: $color_black;
         border: none;
         span {

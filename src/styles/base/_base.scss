@@ -176,6 +176,7 @@ button, .button, [type="button"] {
   height: $size_56px;
   border: solid 1px rgba($color_primary-clearer, $opacity_primary);
   border-radius: $radius_primary;
+  overflow: hidden;
   cursor: pointer;
 
   &:disabled,

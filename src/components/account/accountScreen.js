@@ -1,17 +1,9 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { motion } from "framer-motion";
-
-import { startForgotPassword } from '../../store/auth';
 
 export const AccountScreen = () => {
 
-  const { displayName, photoURL, email } = useSelector( state => state.auth);
-  const dispatch =  useDispatch();
-
-  const onForgotPassword = (event) => {
-    event.preventDefault();
-    dispatch( startForgotPassword({email}));
-  }
+  const { displayName, photoURL } = useSelector( state => state.auth);
 
   return (
     <>
