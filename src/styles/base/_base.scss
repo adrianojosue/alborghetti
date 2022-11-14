@@ -96,8 +96,8 @@ svg:not(.colored) {
 
 *:disabled,
 *[disabled]{
-    opacity: 0.2;
-    cursor: default;
+    opacity: 0.2 !important;
+    cursor: default !important;
 }
 
 .content_normal {
@@ -181,8 +181,8 @@ button, .button, [type="button"] {
 
   &:disabled,
   &[disabled]{
-    opacity: $opacity_primary;
-    cursor: default;
+    opacity: $opacity_primary !important;
+    cursor: default !important;
   }
 
   &.scroll-button_back {

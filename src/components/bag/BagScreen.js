@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { PayPalButtons } from "@paypal/react-paypal-js";
+import { Link, Navigate } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { startDeletingBagItem, startOnSaveQuantityItem } from '../../store/bag';
 import { priceFormat } from '../../helpers/priceFormat';
@@ -8,27 +9,23 @@ import { priceFormat } from '../../helpers/priceFormat';
 export const BagScreen = () => {
 
     const { items, isSaving } = useSelector( state => state.bag );
-    const { displayName } = useSelector( state => state.auth);
     const dispatch =  useDispatch();
 
     const [ loader, setLoader ] = useState(null);
+    const [ payWithPaypal, setPayWithPaypal ] = useState(false);
 
     const listBagItems = items.length;
 
     const itemPrices = items.map( item => item.price * item.quantity);
     const subtotal = itemPrices.reduce((sum, item) => sum + item, 0);
     const itbis = Math.floor(subtotal*18)/100;
-    const delivery = subtotal !== 0 ? 850 : 0;
-    const total = Math.round(subtotal + itbis + delivery);
+    const delivery = subtotal !== 0 ? 20 : 0;
+    const total = subtotal + itbis + delivery;
     const summary = {
         subtotal: subtotal,
         itbis: itbis,
         delivery: delivery,
         total: total,
-    }
-
-    const onBuyWithGooglePay = () => {
-        alert(`Hi ${displayName}, Currently you cannot buy at Alborghetti, we are working on this functionality.`);
     }
 
     const quantityOptions = [
@@ -37,6 +34,32 @@ export const BagScreen = () => {
         { value: 3, label: '3' },
         { value: 4, label: '4' },
     ]
+
+    const purchase_items = items.map( (item, index) => {
+        return {
+            name: `${item.name} in ${item.color} color`,
+            quantity: `${item.quantity}`,
+            unit_amount: {
+                currency_code: 'USD',
+                value: item.price.toFixed(2),
+            },
+            tax: {
+                currency_code: 'USD',
+                value: Math.floor(item.price*18)/100,
+            }
+        }
+    })
+
+    const paypalHandleApprove = (orderID) => {
+        setPayWithPaypal(true)
+        for (let item of items) {
+            dispatch( startDeletingBagItem(item.id) )
+        }
+    }
+
+    if ( payWithPaypal ) {
+        return <Navigate to='/account' />
+    }
 
     return(
         <>
@@ -137,24 +160,84 @@ export const BagScreen = () => {
                             <p>Delivery <span className="price">{priceFormat(summary.delivery)}</span></p>
                             <p>Total <span className="price">{priceFormat(summary.total)}</span></p>
                         </div>
-                        <motion.button
-                            onClick={ onBuyWithGooglePay }
-                            disabled={ listBagItems === 0 }
-                            whileTap={{
-                                scale: 0.95,
-                            }}
-                        >
-                            Buy with
-                            <span>
-                            <svg className="colored" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fillRule="evenodd" clipRule="evenodd" d="M23.52 12.2719C23.52 11.421 23.4437 10.6028 23.3018 9.81738H12V14.4592H18.4582C18.18 15.9592 17.3346 17.2301 16.0636 18.081V21.092H19.9418C22.2109 19.0029 23.52 15.9265 23.52 12.2719Z" fill="#4285F4"/>
-                                <path fillRule="evenodd" clipRule="evenodd" d="M12.001 24.0003C15.241 24.0003 17.9574 22.9257 19.9428 21.093L16.0646 18.0821C14.9901 18.8021 13.6156 19.2276 12.001 19.2276C8.87554 19.2276 6.23008 17.1166 5.28644 14.2803H1.27734V17.3894C3.25189 21.3112 7.31008 24.0003 12.001 24.0003Z" fill="#34A853"/>
-                                <path fillRule="evenodd" clipRule="evenodd" d="M5.28547 14.2795C5.04546 13.5595 4.9091 12.7904 4.9091 11.9995C4.9091 11.2085 5.04546 10.4395 5.28547 9.71945V6.61035H1.27637C0.463637 8.23035 0 10.0631 0 11.9995C0 13.9358 0.463637 15.7686 1.27637 17.3886L5.28547 14.2795Z" fill="#FBBC05"/>
-                                <path fillRule="evenodd" clipRule="evenodd" d="M12.001 4.77274C13.7628 4.77274 15.3446 5.37819 16.5883 6.56729L20.0301 3.12546C17.9519 1.18909 15.2356 0 12.001 0C7.31008 0 3.25189 2.6891 1.27734 6.61092L5.28644 9.72002C6.23008 6.88365 8.87554 4.77274 12.001 4.77274Z" fill="#EA4335"/>
-                            </svg>
-                            Pay
-                            </span>
-                        </motion.button>
+                        <div>
+                            {
+                                isSaving === true
+                                ?   <button disabled className="paypal_button">Loading...</button>
+                                :   <PayPalButtons
+                                        style={{
+                                            layout: 'vertical',
+                                            color: 'gold',
+                                            shape: 'rect',
+                                            label: 'pay',
+                                            height: 55,
+                                            tagline: false,
+                                        }}
+                                        disabled={ listBagItems === 0 || isSaving === true }
+                                        fundingSource='paypal'
+                                        className='button paypal_button'
+                                        createOrder={ async (data, actions) => {
+
+                                            const order = await actions.order.create({
+                                                purchase_units: [
+                                                    {
+                                                        description: 'Alborghetti Store',
+                                                        reference_id: 'C4TalU6eqD',
+                                                        category: 'PHYSICAL_GOODS',
+                                                        amount: {
+                                                            currency_code: 'USD',
+                                                            value: summary.total.toFixed(2),
+                                                            breakdown: {
+                                                                item_total: {
+                                                                    currency_code: 'USD',
+                                                                    value: summary.subtotal.toFixed(2),
+                                                                },
+                                                                shipping: {
+                                                                    currency_code: 'USD',
+                                                                    value: summary.delivery.toFixed(2),
+                                                                },
+                                                                handling: {
+                                                                    currency_code: 'USD',
+                                                                    value: 0.00,
+                                                                },
+                                                                tax_total: {
+                                                                    currency_code: 'USD',
+                                                                    value: summary.itbis.toFixed(2),
+                                                                },
+                                                                shipping_discount: {
+                                                                    currency_code: 'USD',
+                                                                    value: 0.00,
+                                                                }
+                                                                
+                                                            }
+                                                        },
+                                                        items: [
+                                                            ...purchase_items
+                                                        ]
+                                                    }
+                                                ],
+                                            });
+                                            return order
+
+                                        }}
+                                        onApprove={ async (data, actions) => {
+                                            const order = await actions.order.capture()
+                                            console.log(order)
+                                            paypalHandleApprove(data.orderID)
+                                        }}
+                                        onShippingChange={(data, actions) => {
+                                                if (data.shipping_address.country_code !== 'DO') {
+                                                    return actions.reject();
+                                                }
+                                                return actions.resolve();
+                                            }
+                                        }
+                                        onError={ err => {
+                                            console.error(`PayPal error: ${err}`)
+                                        }}
+                                    />
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
