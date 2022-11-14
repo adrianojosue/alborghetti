@@ -9,14 +9,20 @@
 
 The **Alborghetti e-commerce web app project** is in currently development but you can [test right now here](https://alborghettistore.web.app)
 
-## Built with
+## Built in...
 
+### Front-end with:
 * React
 * Redux
 * JavaScript
 * Sass
 * HTML5
+
+### Back-end with:
 * Firebase
+
+### Payment service with:
+* PayPal
 
 # Getting Started with Create React App
 
