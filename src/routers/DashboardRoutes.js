@@ -13,6 +13,7 @@ import { NotFoundScreen } from '../components/NotFoundScreen';
 import { AccountScreen } from "../components/account/accountScreen";
 import { BagScreen } from "../components/bag/BagScreen";
 import { ItemsData } from "../components/items/ItemsData";
+import { OrderApproved } from '../components/orderApproved';
 
 export const DashboardRoutes = () => {
 
@@ -34,6 +35,7 @@ export const DashboardRoutes = () => {
               <Route path="/shoes/womens" element={<WomensScreen />} />
               <Route path="/account" element={<AccountScreen />} />
               <Route path="/bag" element={<BagScreen />} />
+              <Route path="/orderapproved" element={<OrderApproved />} />
               <Route path="/items" element={<ItemsData />} />
               <Route path="/" element={<WhatsNewScreen />} />
               <Route path="*" element={ <NotFoundScreen /> } />

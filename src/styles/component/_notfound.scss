@@ -4,9 +4,10 @@
     align-items: center;
     align-content: center;
     flex-direction: column;
+    text-align: center;
     gap: $size_small;
-    svg {
-        path {
+    svg:not(.colored) {
+        path:not(.colored) {
             fill: $color_subtext;
         }
     }

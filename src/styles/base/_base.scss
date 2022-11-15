@@ -94,6 +94,11 @@ svg:not(.colored) {
   }
 }
 
+.color_ok {
+  color: $color_ok !important;
+  font-weight: bold;
+}
+
 *:disabled,
 *[disabled]{
     opacity: 0.2 !important;

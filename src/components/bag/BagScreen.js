@@ -58,7 +58,7 @@ export const BagScreen = () => {
     }
 
     if ( payWithPaypal ) {
-        return <Navigate to='/account' />
+        return <Navigate to='/orderapproved' />
     }
 
     return(

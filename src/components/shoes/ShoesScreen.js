@@ -106,32 +106,32 @@ export const ShoesScreen = () => {
                 <h1>{ shoe.name }</h1>
 
                 <form className="item_colors">
-                 {
-                    shoe.colors.map( (color, index) => (
-                      <label className="colors-label" key={index} id={color.color_id}>
-                        <input
-                          type='radio'
-                          id={color.color_id}
-                          key={ index }
-                          name={color.color_name}
-                          value={color.color_id}
-                          checked={ itemColor.checked === `${color.color_id}` }
-                          onChange={ (e) => {
-                            /* setImage(0) */
-                            setItemColor({
-                              checked: e.target.value,
-                              backgroundImage: color.color_images,
-                              color_name: color.color_name,
-                              price: color.price,
-                            })
-                          }}
-                          className="colors"
-                          style={{ backgroundColor: [color.color_hex] }}
-                        />
-                        { color.color_name.toUpperCase().replace('_', ' ') }
-                      </label>
-                    ))
-                 }
+                  {
+                      shoe.colors.map( (color, index) => (
+                        <label className="colors-label" key={index} id={color.color_id}>
+                          <input
+                            type='radio'
+                            id={color.color_id}
+                            key={ index }
+                            name={color.color_name}
+                            value={color.color_id}
+                            checked={ itemColor.checked === `${color.color_id}` }
+                            onChange={ (e) => {
+                              /* setImage(0) */
+                              setItemColor({
+                                checked: e.target.value,
+                                backgroundImage: color.color_images,
+                                color_name: color.color_name,
+                                price: color.price,
+                              })
+                            }}
+                            className="colors"
+                            style={{ backgroundColor: [color.color_hex] }}
+                          />
+                          { color.color_name.toUpperCase().replace('_', ' ') }
+                        </label>
+                      ))
+                  }
                 </form>
 
                 <p>{ shoe.description }</p>
