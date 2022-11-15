@@ -18,14 +18,16 @@ export const BagScreen = () => {
 
     const itemPrices = items.map( item => item.price * item.quantity);
     const subtotal = itemPrices.reduce((sum, item) => sum + item, 0);
-    const itbis = Math.floor(subtotal*18)/100;
-    const delivery = subtotal !== 0 ? 20 : 0;
+    const itbis = subtotal*(18/100);
+    const delivery = subtotal !== 0 ? 25.10 : 0.00;
     const total = subtotal + itbis + delivery;
+    const paypalFee = total*(5.4/100) + 0.30;
     const summary = {
         subtotal: subtotal,
         itbis: itbis,
         delivery: delivery,
         total: total,
+        paypalfee: paypalFee,
     }
 
     const quantityOptions = [
@@ -38,15 +40,15 @@ export const BagScreen = () => {
     const purchase_items = items.map( (item, index) => {
         return {
             name: `${item.name} in ${item.color} color`,
-            quantity: `${item.quantity}`,
+            quantity: item.quantity,
             unit_amount: {
                 currency_code: 'USD',
                 value: item.price.toFixed(2),
             },
-            tax: {
+            /* tax: {
                 currency_code: 'USD',
-                value: Math.floor(item.price*18)/100,
-            }
+                value: Math.floor(item.price.toFixed(2)*18)/100,
+            } */
         }
     })
 
@@ -158,6 +160,7 @@ export const BagScreen = () => {
                             <p>Subtotal <span className="price">{priceFormat(summary.subtotal)}</span></p>
                             <p>ITBIS <span className="price">{priceFormat(summary.itbis)}</span></p>
                             <p>Delivery <span className="price">{priceFormat(summary.delivery)}</span></p>
+                            <p>PayPal Fee <span className="price">{priceFormat(summary.paypalfee)}</span></p>
                             <p>Total <span className="price">{priceFormat(summary.total)}</span></p>
                         </div>
                         <div>

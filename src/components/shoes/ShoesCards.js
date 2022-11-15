@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
+import { priceFormat } from '../../helpers/priceFormat';
 
 export const ShoesCards = ({
 
@@ -52,7 +53,7 @@ export const ShoesCards = ({
                                 })
                             }
                         </ul>
-                        <ul className="container_item-price"><li className='normal_price'>RD${ colors[0].price }</li></ul>
+                        <ul className="container_item-price"><li className='normal_price'>{ priceFormat(colors[0].price) }</li></ul>
                     </div>
                 </motion.article>
             </Link>

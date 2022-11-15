@@ -30,7 +30,7 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/V/1/1/p/2232/910/111/2/w/1126/2232910111_6_2_1.jpg?ts=1646236159131',
                     'https://static.zara.net/photos///2022/V/1/1/p/2232/910/111/2/w/1126/2232910111_6_4_1.jpg?ts=1646236159991',
                 ],
-                'price': 4995,
+                'price': 79.90,
             },
             {
                 'color_id': 1,
@@ -41,7 +41,7 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/I/1/1/p/2224/010/075/2/w/1126/2224010075_6_2_1.jpg?ts=1659083327709',
                     'https://static.zara.net/photos///2022/I/1/1/p/2224/010/075/2/w/1126/2224010075_6_4_1.jpg?ts=1659083329468',
                 ],
-                'price': 5995,
+                'price': 84.50,
             },
         ],
         'launched_at': '01/04/2012', // Day/Month/Year
@@ -78,7 +78,7 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/V/1/2/p/2500/921/102/2/w/1126/2500921102_6_1_1.jpg?ts=1645089585715',
                     'https://static.zara.net/photos///2022/V/1/2/p/2500/921/102/2/w/1126/2500921102_6_6_1.jpg?ts=1645089586433',
                 ],
-                'price': 40,
+                'price': 59.90,
             },
             {
                 'color_id': 1,
@@ -89,7 +89,7 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/I/1/2/p/2500/920/010/2/w/1126/2500920010_6_3_1.jpg?ts=1656338612011',
                     'https://static.zara.net/photos///2022/V/1/2/p/2500/920/010/2/w/1126/2500920010_6_6_1.jpg?ts=1637143088896',
                 ],
-                'price': 50,
+                'price': 45.70,
             },
         ],
         'launched_at': '01/04/2022', // Day/Month/Year
@@ -123,7 +123,7 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/I/1/1/p/1207/011/097/2/w/1126/1207011097_6_2_1.jpg?ts=1657815352583',
                     'https://static.zara.net/photos///2022/I/1/1/p/1207/011/097/2/w/1126/1207011097_6_4_1.jpg?ts=1658301503040',
                 ],
-                'price': 6995,
+                'price': 69.70,
             },
         ],
         'launched_at': '01/04/2022', // Day/Month/Year
@@ -160,7 +160,7 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/I/1/2/p/2621/920/120/2/w/1126/2621920120_6_2_1.jpg?ts=1659541995110',
                     'https://static.zara.net/photos///2022/I/1/2/p/2621/920/120/2/w/1126/2621920120_6_6_1.jpg?ts=1659541995720',
                 ],
-                'price': 4990,
+                'price': 99.90,
             },
         ],
         'launched_at': '01/04/2022', // Day/Month/Year
@@ -197,7 +197,7 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/I/1/1/p/2227/910/040/2/w/1126/2227910040_6_2_1.jpg?ts=1660145574466',
                     'https://static.zara.net/photos///2022/I/1/1/p/2227/910/040/2/w/1126/2227910040_6_3_1.jpg?ts=1660139401919',
                 ],
-                'price': 5990,
+                'price': 100.00,
             },
         ],
         'launched_at': '01/04/2022', // Day/Month/Year
@@ -234,7 +234,7 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/I/1/2/p/2506/020/040/2/w/1126/2506020040_6_2_1.jpg?ts=1659513028345',
                     'https://static.zara.net/photos///2022/I/1/2/p/2506/020/040/2/w/1126/2506020040_6_3_1.jpg?ts=1659513028722',
                 ],
-                'price': 4990,
+                'price': 89.95,
             },
         ],
         'launched_at': '01/04/2022', // Day/Month/Year
@@ -271,7 +271,7 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/I/1/1/p/3216/010/040/2/w/1126/3216010040_6_2_1.jpg?ts=1657612598768',
                     'https://static.zara.net/photos///2022/I/1/1/p/3216/010/040/2/w/1126/3216010040_6_4_1.jpg?ts=1657612599146',
                 ],
-                'price': 5990,
+                'price': 69.90,
             },
             {
                 'color_id': 1,
@@ -282,7 +282,7 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/I/1/1/p/3216/010/081/2/w/1126/3216010081_6_2_1.jpg?ts=1657612327028',
                     'https://static.zara.net/photos///2022/I/1/1/p/3216/010/081/2/w/1126/3216010081_6_4_1.jpg?ts=1657612317394',
                 ],
-                'price': 3995,
+                'price': 67.50,
             },
         ],
         'launched_at': '01/04/2022', // Day/Month/Year
@@ -314,7 +314,7 @@ export const shoes = [
                     'https://static.zara.net/photos///2022/I/1/2/p/2426/920/105/2/w/1126/2426920105_6_2_1.jpg?ts=1651147199442',
                     'https://static.zara.net/photos///2022/I/1/2/p/2426/920/105/2/w/1126/2426920105_6_6_1.jpg?ts=1651147199568',
                 ],
-                'price': 5400,
+                'price': 50.70,
             },
         ],
         'launched_at': '01/04/2022', // Day/Month/Year
