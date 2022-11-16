@@ -21,13 +21,12 @@ export const BagScreen = () => {
     const itbis = subtotal*(18/100);
     const delivery = subtotal !== 0 ? 25.10 : 0.00;
     const total = subtotal + itbis + delivery;
-    const paypalFee = total*(5.4/100) + 0.30;
+    /* const paypalFee = total !== 0 ? total*(5.4/100) + 0.30 : 0; */
     const summary = {
         subtotal: subtotal,
         itbis: itbis,
         delivery: delivery,
         total: total,
-        paypalfee: paypalFee,
     }
 
     const quantityOptions = [
@@ -160,7 +159,6 @@ export const BagScreen = () => {
                             <p>Subtotal <span className="price">{priceFormat(summary.subtotal)}</span></p>
                             <p>ITBIS <span className="price">{priceFormat(summary.itbis)}</span></p>
                             <p>Delivery <span className="price">{priceFormat(summary.delivery)}</span></p>
-                            <p>PayPal Fee <span className="price">{priceFormat(summary.paypalfee)}</span></p>
                             <p>Total <span className="price">{priceFormat(summary.total)}</span></p>
                         </div>
                         <div>
