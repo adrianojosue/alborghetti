@@ -163,8 +163,14 @@ export const BagScreen = () => {
                         </div>
                         <div>
                             {
-                                isSaving === true
-                                ?   <button disabled className="paypal_button">Loading...</button>
+                                isSaving === true || listBagItems === 0
+                                ?   <button disabled className="paypal_button">
+                                        {
+                                            listBagItems === 0
+                                            ? <></>
+                                            : 'Loading...'
+                                        }
+                                    </button>
                                 :   <PayPalButtons
                                         style={{
                                             layout: 'vertical',
