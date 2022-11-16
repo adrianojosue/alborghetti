@@ -14,6 +14,8 @@ import { AccountScreen } from "../components/account/accountScreen";
 import { BagScreen } from "../components/bag/BagScreen";
 import { ItemsData } from "../components/items/ItemsData";
 import { OrderApproved } from '../components/orderApproved';
+import { CookiesScreen } from "../components/cookies";
+import { HelpScreen } from "../components/help";
 
 export const DashboardRoutes = () => {
 
@@ -37,6 +39,8 @@ export const DashboardRoutes = () => {
               <Route path="/bag" element={<BagScreen />} />
               <Route path="/orderapproved" element={<OrderApproved />} />
               <Route path="/items" element={<ItemsData />} />
+              <Route path="/cookies" element={<CookiesScreen />} />
+              <Route path="/help" element={<HelpScreen />} />
               <Route path="/" element={<WhatsNewScreen />} />
               <Route path="*" element={ <NotFoundScreen /> } />
               <Route path="/auth/*" element={ <Navigate to='/' /> } />

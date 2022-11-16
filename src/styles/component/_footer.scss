@@ -84,8 +84,24 @@ footer {
                     }
                 }
             }
+            &.active {
+                background-color: $color_primary-clearer;
+                transition: background-color .3s cubic-bezier(0,0,.5,1);
+                color: $color_text;
+                svg {
+                    path {
+                        fill: $color_text;
+                    }
+                }
+            }
         }
 
+    }
+
+    .footer_copyright {
+        text-align: center;
+        color: $color_subtext;
+        opacity: $opacity_secondary;
     }
 
 }

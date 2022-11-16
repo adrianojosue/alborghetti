@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom"
 
+const currentYear = new Date().getUTCFullYear();
+
 export const Footer = () => {
   return (
     <footer>
@@ -50,18 +52,19 @@ export const Footer = () => {
       </div>
 
       <div className="footer_navbar">
-        <NavLink to="/about">
+        <NavLink className={ ({ isActive }) => '' + ( isActive ? ' active' : '') } to="/about">
           About us
         </NavLink>
-        <NavLink to="/contact">
-          Contact
-        </NavLink>
-        <NavLink to="/help">
+        <NavLink className={ ({ isActive }) => '' + ( isActive ? ' active' : '') } to="/help">
           Help
         </NavLink>
-        <NavLink to="/cookies">
+        <NavLink className={ ({ isActive }) => '' + ( isActive ? ' active' : '') } to="/cookies">
           Cookies
         </NavLink>
+      </div>
+
+      <div className="footer_copyright">
+        <p>© {currentYear} Alborghetti, Inc.</p>
       </div>
 
     </footer>
