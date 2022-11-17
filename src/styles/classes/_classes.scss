@@ -12,3 +12,31 @@
 .margin-bottom_thin {
     margin-bottom: $size_thin;
 }
+
+// Paddings
+
+.padding-bottom_medium {
+    padding-bottom: $size_medium;
+}
+.padding-bottom_x-small {
+    padding-bottom: $size_x-small;
+}
+.padding-bottom_small {
+    margin-bottom: $size_small;
+}
+.padding-bottom_thin {
+    padding-bottom: $size_thin;
+}
+
+// Borders
+
+.border-bottom {
+    border-bottom: 1px solid $color_primary-clearer;
+}
+
+// Align
+
+.align-center {
+    text-align: center;
+    align-self: center;
+}

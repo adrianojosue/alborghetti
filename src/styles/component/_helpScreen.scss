@@ -10,6 +10,11 @@
         background-size: cover;
         object-fit: cover;
     }
+
+    hr {
+        display: block;
+        height: $size_medium;
+    }
     
     span {
         a {
