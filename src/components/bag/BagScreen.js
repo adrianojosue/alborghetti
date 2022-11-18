@@ -9,7 +9,7 @@ import { priceFormat } from '../../helpers/priceFormat';
 export const BagScreen = () => {
 
     const { items, isSaving } = useSelector( state => state.bag );
-    const dispatch =  useDispatch();
+    const dispatch = useDispatch();
 
     const [ loader, setLoader ] = useState(null);
     const [ payWithPaypal, setPayWithPaypal ] = useState(false);

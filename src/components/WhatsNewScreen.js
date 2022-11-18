@@ -2,6 +2,7 @@ import { ShoesCarouselCards } from './shoes/ShoesCarouselCards';
 import { useSelector } from 'react-redux';
 import { motion } from "framer-motion";
 import { NavLink } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 
 export const WhatsNewScreen = () => {
 
@@ -38,7 +39,7 @@ export const WhatsNewScreen = () => {
                   }
               </figure>
               <section className="user_welcome-info">
-                <h2>Welcome, {
+                <h2><FormattedMessage id='user.welcome'/>, {
 
                 (!!displayName === true)
                 ? displayName
