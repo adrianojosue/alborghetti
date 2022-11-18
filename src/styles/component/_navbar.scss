@@ -284,6 +284,8 @@ header.navbar {
                     align-items: center;
                     width: 46px;
                     height: 46px;
+                    min-width: 46px;
+                    min-height: 46px;
                     border-radius: 50%;
                     margin-right: $size_thin;
                     background-color: $color_subtext;

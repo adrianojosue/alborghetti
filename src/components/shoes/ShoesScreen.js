@@ -85,13 +85,14 @@ export const ShoesScreen = () => {
   return (
     <>
       <Helmet>
-        <title>{shoe.name}</title>
-        <meta property="og:title" content={shoe.name} />
+        <title>Alborghetti Store: {shoe.name}</title>
+        <meta property="og:title" content={'Alborghetti Store: ' + shoe.name} />
 
         <meta name="description" content={shoe.description} />
         <meta property="og:description" content={shoe.description} />
 
         <meta property="og:url" content={window.location.href} />
+        <meta property="og:type" content="article" />
         
   	    <meta property="og:image" content={shoe.colors[0].color_images[0]} />
       </Helmet>

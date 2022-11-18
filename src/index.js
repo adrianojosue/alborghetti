@@ -17,7 +17,15 @@ root.render(
       <HelmetProvider>
       <Helmet>
         <title>Alborghetti Store</title>
+        <meta property="og:title" content='Alborghetti Store' />
+
         <meta name="description" content='L’eleganza' />
+        <meta property="og:description" content='L’eleganza' />
+
+        <meta property="og:url" content={window.location.href} />
+        <meta property="og:type" content="website" />
+
+        <meta property="og:image" content='./../public/favicon.png' />
       </Helmet>
         <App />
       </HelmetProvider>
