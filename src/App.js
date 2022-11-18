@@ -16,7 +16,6 @@ export const App = () => {
   const [ messages, setMessages ] = useState(lang)
 
   const userLang = navigator.language;
-  console.log(userLang)
 
   useEffect(() => {
     userLang !== 'es'

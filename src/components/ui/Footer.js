@@ -1,11 +1,6 @@
-import { NavLink } from "react-router-dom"
-import { useDispatch } from 'react-redux';
-import { startGetLang } from "../../store/lang";
-
+import { NavLink } from "react-router-dom";
 
 export const Footer = () => {
-
-  const dispatch = useDispatch();
 
   const currentYear = new Date().getUTCFullYear();
   
@@ -67,11 +62,6 @@ export const Footer = () => {
         <NavLink className={ ({ isActive }) => '' + ( isActive ? ' active' : '') } to="/cookies">
           Cookies
         </NavLink>
-      </div>
-
-      <div>
-        <button onClick={ () => dispatch( startGetLang('es') ) }>es</button>
-        <button onClick={ () => dispatch( startGetLang('en') ) }>en</button>
       </div>
 
       <div className="footer_copyright">

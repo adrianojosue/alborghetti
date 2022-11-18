@@ -47,7 +47,7 @@ header.navbar {
             }
         }
 
-        a, button {
+        a, button, select {
             display: flex;
             width: $size_56px;
             height: 100%;
@@ -255,7 +255,7 @@ header.navbar {
             margin-right: $size_4px;
         }
 
-        button, a {
+        button, a, select {
             display: flex;
             justify-content: center;
             align-items: center;

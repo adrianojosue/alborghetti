@@ -351,7 +351,7 @@ select {
   min-width: $size_56px;
   height: $size_56px;
   border: solid 1px rgba($color_primary-clearer, $opacity_primary);
-  background-color: $color_primary !important;
+  background-color: $color_primary;
   border-radius: $radius_primary;
   cursor: pointer;
   text-align-last: center;
