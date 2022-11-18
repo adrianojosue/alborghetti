@@ -7,6 +7,8 @@ import { getShoesById } from '../../selectors/getShoesById';
 import { startSavingBagItems } from '../../store/bag/';
 import { priceFormat } from '../../helpers/priceFormat';
 
+import { Helmet } from "react-helmet-async";
+
 export const ShoesScreen = () => {
 
   const { items } = useSelector( state => state.bag );
@@ -82,6 +84,18 @@ export const ShoesScreen = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{shoe.name}</title>
+        <meta property="og:title" content={shoe.name} />
+
+        <meta name="description" content={shoe.description} />
+        <meta property="og:description" content={shoe.description} />
+
+        <meta property="og:url" content={window.location.href} />
+        
+  	    <meta property="og:image" content={shoe.colors[0].color_images[0]} />
+      </Helmet>
+
       <motion.div
         className="content_normal"
         initial={{opacity: 0}}

@@ -1,0 +1,11 @@
+.lang_select {
+    color: $color_subtext;
+}
+
+.select_loader {
+    svg {
+        path {
+            fill: $color_subtext !important;
+        }
+    }
+}
