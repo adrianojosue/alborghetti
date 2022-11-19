@@ -1,13 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { startGetLang } from "../../store/lang";
 import { motion } from "framer-motion";
-import { FormattedMessage, useIntl } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 export const SelectLang = () => {
 
     const { lang, isLoading } = useSelector( state => state.lang );
     const dispatch = useDispatch();
-    const intl = useIntl();
 
     const selectOptions = [
         { value: 'es', label: <FormattedMessage id='App.LangSpaMessage'/> },
@@ -43,11 +42,6 @@ export const SelectLang = () => {
                             : 'es'
                         }
                     >
-                    <optgroup dir="ltr" label={
-                        intl.formatMessage({
-                            id: 'App.LangMessage'
-                        })
-                    }>
                         {
                             selectOptions.map((select, index) => (
                                 <option
@@ -59,7 +53,6 @@ export const SelectLang = () => {
                                 </option>
                             ))
                         }
-                    </optgroup>
                     </select>
             }
         </>

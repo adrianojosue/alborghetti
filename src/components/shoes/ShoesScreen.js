@@ -155,7 +155,7 @@ export const ShoesScreen = () => {
                 <div className="item_info-options">
                   
                   <ul className="item_info_price">
-                    <li>{ priceFormat(itemColor.price) }</li>
+                    <li>US{ priceFormat(itemColor.price) }</li>
                   </ul>
 
                   {

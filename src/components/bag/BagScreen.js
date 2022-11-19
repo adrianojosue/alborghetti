@@ -87,7 +87,7 @@ export const BagScreen = () => {
                                                 <div className="info">
                                                     <h2 className="line-clamp_2">{item.name}</h2>
                                                     <span className="line-clamp_1">{item.color}</span>
-                                                    <p className="price line-clamp_1">{priceFormat(item.price * item.quantity)}</p>
+                                                    <p className="price line-clamp_1">US{priceFormat(item.price * item.quantity)}</p>
                                                 </div>
                                             </div>
                                         </Link>
@@ -157,10 +157,10 @@ export const BagScreen = () => {
                     <div className="content_right bag_summary sticky" disabled={ listBagItems === 0 }>
                         <h2><FormattedMessage id='bagScreen.SummaryMessage'/></h2>
                         <div>
-                            <p>Subtotal <span className="price">{priceFormat(summary.subtotal)}</span></p>
-                            <p><FormattedMessage id='bagScreen.TaxMessage'/> <span className="price">{priceFormat(summary.itbis)}</span></p>
-                            <p><FormattedMessage id='bagScreen.ShippingMessage'/> <span className="price">{priceFormat(summary.delivery)}</span></p>
-                            <p>Total <span className="price">{priceFormat(summary.total)}</span></p>
+                            <p>Subtotal <span className="price">US{priceFormat(summary.subtotal)}</span></p>
+                            <p><FormattedMessage id='bagScreen.TaxMessage'/> <span className="price">US{priceFormat(summary.itbis)}</span></p>
+                            <p><FormattedMessage id='bagScreen.ShippingMessage'/> <span className="price">US{priceFormat(summary.delivery)}</span></p>
+                            <p>Total <span className="price">US{priceFormat(summary.total)}</span></p>
                         </div>
                         <div>
                             {

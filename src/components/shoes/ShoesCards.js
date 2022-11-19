@@ -53,7 +53,7 @@ export const ShoesCards = ({
                                 })
                             }
                         </ul>
-                        <ul className="container_item-price"><li className='normal_price'>{ priceFormat(colors[0].price) }</li></ul>
+                        <ul className="container_item-price"><li className='normal_price'>US{ priceFormat(colors[0].price) }</li></ul>
                     </div>
                 </motion.article>
             </Link>
