@@ -1,3 +1,47 @@
 {
-    "user.welcome": "Bienvenido" 
+    "App.loading": "Cargando...",
+    "App.SectionMessage": "Para",
+    "App.LangMessage": "Idioma",
+    "App.LangSpaMessage": "Esp",
+    "App.LangEngMessage": "Ing",
+
+    "WhatsNewScreen.WelcomeMessage": "Bienvenido",
+    "WhatsNewScreen.NewArrivals": "Nuevos lanzamientos",
+
+    "Help.HelloMessage": "¿En qué podemos ayudarte",
+    "Help.ContactMessage": "Contacte nuestro servicio de atención al cliente",
+    "Help.ScheduleMessage": "Horarios",
+    "Help.ScheduleWeekdays": "Lun - Vier",
+    "Help.ScheduleWeekend": "Sáb",
+
+    "Footer.MenuAbout": "Nosotros",
+    "Footer.MenuHelp": "Ayuda",
+
+    "AccountScreen.WelcomeMessage": "Hola",
+    "AccountScreen.UserMessage": "Aquí puedes administrar tu información",
+
+    "Menu.SectionTitle": "Secciones",
+    "Menu.SectionTitleTwo": "Zapatos",
+    "Menu.WhatsNew": "Qué hay de nuevo?",
+    "Menu.SectionMen": "Hombre",
+    "Menu.SectionWomen": "Mujer",
+
+    "SearchScreen.SearchInput": "Buscar productos...",
+    "SearchScreen.IndicationMessage": "Busque por tipo o característica, como: Zapato, Cuero, etc.",
+    "SearchScreen.errorMessage": "Ningún producto con",
+
+    "bagScreen.FilledBagMessage": "TU BOLSA",
+    "bagScreen.EmptyBagMessage": "TU BOLSA ESTÁ VACÍA",
+    "bagScreen.OneItemMessage": "artículo",
+    "bagScreen.MultiplesItemMessage": "artículos",
+    "bagScreen.SummaryMessage": "Resumen",
+    "bagScreen.TaxMessage": "Impuestos (ITBIS)",
+    "bagScreen.ShippingMessage": "Envío",
+
+    "ItemScreen.AddButton": "Agregar a tu bolsa",
+    "ItemScreen.AddedButtonMessage": "Agregado a tu bolsa",
+
+    "OrderApproved.CelebrationMessage": "¡Wepa!",
+    "OrderApproved.ApprovedMessage": "Su pedido ha sido aprobado",
+    "OrderApproved.WorkingMessage": "Estamos trabajando para enviar su pedido, todo el proceso puede demorar hasta una semana."
 }

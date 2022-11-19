@@ -1,3 +1,47 @@
 {
-    "user.welcome": "Welcome"
+    "App.loading": "Loading...",
+    "App.SectionMessage": "For",
+    "App.LangMessage": "Lang",
+    "App.LangSpaMessage": "Spa",
+    "App.LangEngMessage": "Eng",
+
+    "WhatsNewScreen.WelcomeMessage": "Welcome",
+    "WhatsNewScreen.NewArrivals": "New arrivals",
+
+    "Help.HelloMessage": "How can we help you",
+    "Help.ContactMessage": "Contact aur customer service",
+    "Help.ScheduleMessage": "Schedule",
+    "Help.ScheduleWeekdays": "Mon - Fri",
+    "Help.ScheduleWeekend": "Sat",
+
+    "Footer.MenuAbout": "About Us",
+    "Footer.MenuHelp": "Help",
+
+    "AccountScreen.WelcomeMessage": "Hey",
+    "AccountScreen.UserMessage": "Here you can manage your info",
+
+    "Menu.SectionTitle": "Sections",
+    "Menu.SectionTitleTwo": "Shoes",
+    "Menu.WhatsNew": "What's new?",
+    "Menu.SectionMen": "Men",
+    "Menu.SectionWomen": "Women",
+
+    "SearchScreen.SearchInput": "Search products...",
+    "SearchScreen.IndicationMessage": "Search by type or characteristic, like: Shoe, Leather, etc.",
+    "SearchScreen.errorMessage": "No items with",
+
+    "bagScreen.FilledBagMessage": "YOUR BAG",
+    "bagScreen.EmptyBagMessage": "YOUR BAG IS EMPTY",
+    "bagScreen.OneItemMessage": "item",
+    "bagScreen.MultiplesItemMessage": "items",
+    "bagScreen.SummaryMessage": "Summary",
+    "bagScreen.TaxMessage": "Taxes (ITBIS)",
+    "bagScreen.ShippingMessage": "Shipping",
+
+    "ItemScreen.AddButton": "Add to your bag",
+    "ItemScreen.AddedButtonMessage": "Added to your bag",
+
+    "OrderApproved.CelebrationMessage": "Woohoo!",
+    "OrderApproved.ApprovedMessage": "Your order has approved",
+    "OrderApproved.WorkingMessage": "We are working to ship your order, the whole process can take up to a week."
 }

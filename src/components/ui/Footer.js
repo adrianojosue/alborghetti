@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { FormattedMessage } from 'react-intl';
 
 export const Footer = () => {
 
@@ -54,10 +55,10 @@ export const Footer = () => {
 
       <div className="footer_navbar">
         <NavLink className={ ({ isActive }) => '' + ( isActive ? ' active' : '') } to="/about">
-          About us
+          <FormattedMessage id='Footer.MenuAbout'/>
         </NavLink>
         <NavLink className={ ({ isActive }) => '' + ( isActive ? ' active' : '') } to="/help">
-          Help
+          <FormattedMessage id='Footer.MenuHelp'/>
         </NavLink>
         <NavLink className={ ({ isActive }) => '' + ( isActive ? ' active' : '') } to="/cookies">
           Cookies

@@ -25,7 +25,7 @@ export const App = () => {
 
   return (
     <>
-      <IntlProvider locale='en-US' messages={messages}>
+      <IntlProvider locale='en' messages={messages}>
         <PayPalScriptProvider
           options={{
               'client-id': process.env.REACT_APP_PAYPAL_CLIENT_ID,

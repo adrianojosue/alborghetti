@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FormattedMessage } from 'react-intl';
 
 export const OrderApproved = () => {
     return(
@@ -11,10 +12,10 @@ export const OrderApproved = () => {
                     animate={{opacity: 1, scale: 2.0 }}
                     exit={{opacity: 0, scale: 0 }}
                 >
-                    Woohoo!
+                    <FormattedMessage id='OrderApproved.CelebrationMessage'/>
                 </motion.h3>
                 <motion.h2 initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
-                    Your order has approved
+                    <FormattedMessage id='OrderApproved.ApprovedMessage'/>
                 </motion.h2>
                 <motion.svg
                     className="colored"
@@ -38,7 +39,7 @@ export const OrderApproved = () => {
                     <path d="M26.5244 43.1791C26.5244 46.4122 23.9171 49.0195 20.684 49.0195C17.477 49.0195 14.8436 46.3861 14.8436 43.1791C14.8436 39.9722 17.477 37.3388 20.684 37.3388C23.891 37.3388 26.5244 39.9722 26.5244 43.1791Z" fill="#BDBDBD"/>
                 </motion.svg>
 
-                <motion.span initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>We are working to ship your order, the process can take up to a week to reach its destination.</motion.span>
+                <motion.span initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}><FormattedMessage id='OrderApproved.WorkingMessage'/></motion.span>
             </div>
         </>
     )

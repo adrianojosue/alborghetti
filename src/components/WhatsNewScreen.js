@@ -39,7 +39,7 @@ export const WhatsNewScreen = () => {
                   }
               </figure>
               <section className="user_welcome-info">
-                <h2><FormattedMessage id='user.welcome'/>, {
+                <h2><FormattedMessage id='WhatsNewScreen.WelcomeMessage'/>, {
 
                 (!!displayName === true)
                 ? displayName
@@ -53,7 +53,7 @@ export const WhatsNewScreen = () => {
         </div>
         <div className="content_stretch">
           <div className="content_normal content_carousel">
-            <motion.h1 initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>New arrivals</motion.h1>
+            <motion.h1 initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}><FormattedMessage id='WhatsNewScreen.NewArrivals'/></motion.h1>
           </div>
           <ShoesCarouselCards type />
         </div>

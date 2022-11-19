@@ -6,11 +6,13 @@ import { getItemByName } from '../../helpers/getItemByName';
 import { ShoesCards } from '../../components/shoes/ShoesCards';
 
 import { motion } from "framer-motion";
+import { FormattedMessage, useIntl } from 'react-intl';
 
 export const SearchScreen = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
+  const intl = useIntl();
 
   const { q = '' } = queryString.parse( location.search );
   const shoes = getItemByName(q);
@@ -35,7 +37,11 @@ export const SearchScreen = () => {
         <input
           type="text"
           autoFocus
-          placeholder="Search products..."
+          placeholder={
+            intl.formatMessage({
+              id: 'SearchScreen.SearchInput'
+            })
+          }
           className="search_input"
           name="searchText"
           autoComplete="off"
@@ -54,9 +60,9 @@ export const SearchScreen = () => {
         {
           ( q === '' )
           ? <motion.div className="message" initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
-              <p>Search by type or characteristic, like: Shoe, Leather, etc.</p>
+              <p><FormattedMessage id='SearchScreen.IndicationMessage'/></p>
             </motion.div>
-          : ( shoes.length === 0 ) &&  <motion.div className="message" initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}><p>No items with</p><h1><b>"{ q }"</b></h1></motion.div>
+          : ( shoes.length === 0 ) &&  <motion.div className="message" initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}><p><FormattedMessage id='SearchScreen.errorMessage'/></p><h1><b>"{ q }"</b></h1></motion.div>
         }
       </div>
 

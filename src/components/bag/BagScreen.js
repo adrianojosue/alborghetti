@@ -5,6 +5,7 @@ import { Link, Navigate } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { startDeletingBagItem, startOnSaveQuantityItem } from '../../store/bag';
 import { priceFormat } from '../../helpers/priceFormat';
+import { FormattedMessage } from 'react-intl';
 
 export const BagScreen = () => {
 
@@ -71,10 +72,10 @@ export const BagScreen = () => {
                         <div className="bag_info">
                             {
                                 ( listBagItems !== 0)
-                                ? <motion.h1 initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>YOUR BAG</motion.h1>
-                                : <motion.h1 initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>YOUR BAG IS EMPTY</motion.h1>
+                                ? <motion.h1 initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}><FormattedMessage id='bagScreen.FilledBagMessage'/></motion.h1>
+                                : <motion.h1 initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}><FormattedMessage id='bagScreen.EmptyBagMessage'/></motion.h1>
                             }
-                            <h2><span>{listBagItems} {listBagItems === 1 ? 'item' : 'items'}</span></h2>
+                            <h2><span>{listBagItems} {listBagItems === 1 ? <FormattedMessage id='bagScreen.OneItemMessage'/> : <FormattedMessage id='bagScreen.MultiplesItemMessage'/>}</span></h2>
                         </div>
                         <ul className="bag_items">
                             {
@@ -154,11 +155,11 @@ export const BagScreen = () => {
                         </ul>
                     </div>
                     <div className="content_right bag_summary sticky" disabled={ listBagItems === 0 }>
-                        <h2>Summary</h2>
+                        <h2><FormattedMessage id='bagScreen.SummaryMessage'/></h2>
                         <div>
                             <p>Subtotal <span className="price">{priceFormat(summary.subtotal)}</span></p>
-                            <p>ITBIS <span className="price">{priceFormat(summary.itbis)}</span></p>
-                            <p>Delivery <span className="price">{priceFormat(summary.delivery)}</span></p>
+                            <p><FormattedMessage id='bagScreen.TaxMessage'/> <span className="price">{priceFormat(summary.itbis)}</span></p>
+                            <p><FormattedMessage id='bagScreen.ShippingMessage'/> <span className="price">{priceFormat(summary.delivery)}</span></p>
                             <p>Total <span className="price">{priceFormat(summary.total)}</span></p>
                         </div>
                         <div>
@@ -168,7 +169,7 @@ export const BagScreen = () => {
                                         {
                                             listBagItems === 0
                                             ? <></>
-                                            : 'Loading...'
+                                            : <FormattedMessage id='App.loading'/>
                                         }
                                     </button>
                                 :   <PayPalButtons

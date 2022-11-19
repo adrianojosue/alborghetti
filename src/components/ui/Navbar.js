@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { startLogoutFirebase } from '../../store/auth';
 
 import { motion, useDragControls } from "framer-motion";
+import { FormattedMessage } from 'react-intl';
 import { SelectLang } from './selectLang';
 
 export const Navbar = () => {
@@ -194,19 +195,19 @@ export const Navbar = () => {
           </header>
           <ul className='sidenav_items'>
               
-              <h2 className='sidenav_section-divider'>Sections</h2>
+              <h2 className='sidenav_section-divider'><FormattedMessage id='Menu.SectionTitle'/></h2>
 
               <NavLink className={ ({ isActive }) => 'sidenav_item' + ( isActive ? ' active' : '') } to="/" onClick={ toggleSidenav }>
-                <li>What's new?</li>
+                <li><FormattedMessage id='Menu.WhatsNew'/></li>
               </NavLink>
 
-              <h2 className='sidenav_section-divider'>Shoes</h2>
+              <h2 className='sidenav_section-divider'><FormattedMessage id='Menu.SectionTitleTwo'/></h2>
 
               <NavLink className={ ({ isActive }) => 'sidenav_item' + ( isActive ? ' active' : '') } to="/shoes/mens" onClick={ toggleSidenav }>
-                <li>Mens</li>
+                <li><FormattedMessage id='Menu.SectionMen'/></li>
               </NavLink>
               <NavLink className={ ({ isActive }) => 'sidenav_item' + ( isActive ? ' active' : '') } to="/shoes/womens" onClick={ toggleSidenav }>
-                <li>Womens</li>
+                <li><FormattedMessage id='Menu.SectionWomen'/></li>
               </NavLink>
 
           </ul>

@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { motion } from "framer-motion";
+import { FormattedMessage } from 'react-intl';
 
 export const AccountScreen = () => {
 
@@ -36,14 +37,14 @@ export const AccountScreen = () => {
                 }
             </motion.figure>
             <section className="user_account-info">
-              <h2>Hey, {
+              <h2><FormattedMessage id='AccountScreen.WelcomeMessage'/>, {
 
                 (!!displayName === true)
                 ? displayName
                 : 'User'
 
               }</h2>
-              <p>Here you can manage your info</p>
+              <p><FormattedMessage id='AccountScreen.UserMessage'/></p>
             </section>
           </div>
 
