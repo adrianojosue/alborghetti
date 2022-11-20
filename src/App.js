@@ -3,8 +3,9 @@ import { AppRouter } from './routers/AppRouter';
 import { ErrorMessage } from './components/ui/errorMessage';
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { IntlProvider } from 'react-intl';
+import { startGetLang } from "../src/store/lang";
 
 import en from './lang/en-US.json';
 import es from './lang/es-US.json';
@@ -15,13 +16,23 @@ export const App = () => {
 
   const [ messages, setMessages ] = useState(lang)
 
-  const userLang = navigator.language;
+  const dispatch = useDispatch();
+
+  const userLang = navigator.language.split('-')[0];
+
+  const currentLang = localStorage.getItem('langApp');
 
   useEffect(() => {
     userLang !== 'es'
-    ? lang !== 'es' ? setMessages(en) : setMessages(es)
+    ? !currentLang && dispatch(startGetLang('en'))
+    : !currentLang && dispatch(startGetLang('es'))
+  }, [userLang, currentLang, dispatch])
+
+  useEffect(() => {
+    lang !== 'es'
+    ? setMessages(en)
     : setMessages(es)
-  }, [lang, userLang])
+  }, [lang])
 
   return (
     <>

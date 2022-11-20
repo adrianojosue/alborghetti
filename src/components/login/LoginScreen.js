@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { motion } from "framer-motion";
+import { FormattedMessage, useIntl } from 'react-intl';
 import { useForm } from '../../hooks';
 import { startGoogleSignIn, startLoginWithEmailAndPassword, startForgotPassword } from '../../store/auth';
 
@@ -16,6 +17,7 @@ export const LoginScreen = () => {
 
   const dispatch =  useDispatch();
   const navigate = useNavigate();
+  const intl = useIntl();
 
   const { email, password, onInputChange } = useForm(formData);
 
@@ -96,7 +98,7 @@ export const LoginScreen = () => {
           </div>
 
           <form className="auth_form" onSubmit={ onSubmit }>
-            <h2>Sign In</h2>
+            <h2><FormattedMessage id='Auth.SignInMessage'/></h2>
             <input
               name="email"
               label="email"
@@ -111,7 +113,11 @@ export const LoginScreen = () => {
               name="password"
               label="password"
               type="password"
-              placeholder="Password"
+              placeholder={
+                intl.formatMessage({
+                  id: 'Auth.PasswordInputMessage'
+                })
+              }
               autoComplete="off"
               value={ password }
               onChange={ onInputChange }
@@ -120,7 +126,7 @@ export const LoginScreen = () => {
             {
               ( errorMessage === 'not-error' )
               ? <span>
-                  Done, check your email to reset your password
+                  <FormattedMessage id='Auth.ResetEmailDone'/>
                   <motion.svg
                     width="20"
                     height="16"
@@ -141,7 +147,7 @@ export const LoginScreen = () => {
                   </motion.svg>
                 </span>
               : <span className="action_link" onClick={ onForgotPassword }>
-                  Send me a password reset email
+                  <FormattedMessage id='Auth.ResetEmailMessage'/>
                   <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10.0962 9.5292C10.4789 9.5292 10.8369 9.3622 11.1703 9.02822L19.108 1.26012C18.8206 0.866656 18.2333 0.669922 17.3461 0.669922H2.69139C1.85833 0.669922 1.29997 0.844014 1.01628 1.1922L9.02138 9.02822C9.35524 9.3622 9.71351 9.5292 10.0962 9.5292ZM0.607455 14.6309L7.22383 8.30017L0.552018 1.8081C0.389735 2.03915 0.308594 2.46063 0.308594 3.07255V13.2673C0.308594 13.9246 0.408214 14.3792 0.607455 14.6309ZM2.71451 15.6699H17.3582C18.1829 15.6699 18.741 15.4961 19.0324 15.1486L12.438 8.82812L11.6867 9.55766C11.1902 10.0308 10.66 10.2674 10.0962 10.2674C9.5319 10.2674 9.00142 10.0308 8.50478 9.55766L7.75433 8.82812L1.09612 15.2125C1.37687 15.5174 1.91633 15.6699 2.71451 15.6699ZM19.4966 14.5435C19.6669 14.3131 19.752 13.8877 19.752 13.2673V3.07255C19.752 2.50372 19.6815 2.11528 19.5405 1.90723L12.9677 8.30017L19.4966 14.5435Z" fill="none"/>
                   </svg>
@@ -159,8 +165,8 @@ export const LoginScreen = () => {
                 whileTap={{
                   scale: 1,
                 }}
-              >Continue</motion.button>
-              <span>Or</span>
+              ><FormattedMessage id='Auth.ContinueButtonMessage'/></motion.button>
+              <span><FormattedMessage id='Auth.OrOptionMessage'/></span>
                 <motion.button
                   className='button_accent google'
                   type="button"
@@ -176,12 +182,12 @@ export const LoginScreen = () => {
                     <path fillRule="evenodd" clipRule="evenodd" d="M5.28547 14.2795C5.04546 13.5595 4.9091 12.7904 4.9091 11.9995C4.9091 11.2085 5.04546 10.4395 5.28547 9.71945V6.61035H1.27637C0.463637 8.23035 0 10.0631 0 11.9995C0 13.9358 0.463637 15.7686 1.27637 17.3886L5.28547 14.2795Z" fill="#FBBC05"/>
                     <path fillRule="evenodd" clipRule="evenodd" d="M12.001 4.77274C13.7628 4.77274 15.3446 5.37819 16.5883 6.56729L20.0301 3.12546C17.9519 1.18909 15.2356 0 12.001 0C7.31008 0 3.25189 2.6891 1.27734 6.61092L5.28644 9.72002C6.23008 6.88365 8.87554 4.77274 12.001 4.77274Z" fill="#EA4335"/>
                   </svg>
-                  <span>Sign in with Google</span>
+                  <span><FormattedMessage id='Auth.SignInGoogleMessage'/></span>
                 </motion.button>
             </div>
           </form>
 
-          <span>New to Alborghetti?  <NavLink to="/auth/register">Sign up now</NavLink></span>
+          <span><FormattedMessage id='Auth.NewToMessage'/>  <NavLink to="/auth/register"><FormattedMessage id='Auth.SignUpMessage'/></NavLink></span>
 
         </div>
       </motion.div>

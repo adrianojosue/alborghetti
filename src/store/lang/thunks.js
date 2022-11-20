@@ -8,7 +8,7 @@ export const startGetLang = (lang) => {
         setTimeout(() => {
             dispatch( setLang(lang) );
             localStorage.setItem('langApp', lang)
-        }, 1000)
+        }, 800)
     }
 
 }

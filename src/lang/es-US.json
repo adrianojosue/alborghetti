@@ -1,4 +1,14 @@
 {
+    "Auth.SignInMessage": "Inicia Sesión",
+    "Auth.PasswordInputMessage": "Contraseña",
+    "Auth.ResetEmailMessage": "Envíame un email para cambiar la contraseña",
+    "Auth.ResetEmailDone": "Listo, revisa tu email para cambiar tu contraseña",
+    "Auth.ContinueButtonMessage": "Continuar",
+    "Auth.OrOptionMessage": "o",
+    "Auth.SignInGoogleMessage": "Inicia sesión con Google",
+    "Auth.NewToMessage": "¿Eres nuevo?",
+    "Auth.SignUpMessage": "Crea una cuenta",
+
     "App.loading": "Cargando...",
     "App.SectionMessage": "Para",
     "App.LangMessage": "Idioma",
@@ -43,5 +53,9 @@
 
     "OrderApproved.CelebrationMessage": "¡Wepa!",
     "OrderApproved.ApprovedMessage": "Su pedido ha sido aprobado",
-    "OrderApproved.WorkingMessage": "Estamos trabajando para enviar su pedido, todo el proceso puede demorar hasta una semana."
+    "OrderApproved.WorkingMessage": "Estamos trabajando para enviar su pedido, todo el proceso puede demorar hasta una semana.",
+
+    "Cookies.DescriptionMessageOne": "Las cookies y otras tecnologías similares son una parte esencial del funcionamiento de nuestra aplicación web. El objetivo principal de las cookies es hacer que su experiencia de navegación sea más fácil y eficiente, además de mejorar nuestros servicios y la propia aplicación en sí.",
+    "Cookies.DescriptionMessageTwo": "Estas cookies generalmente se configuran para responder a acciones realizadas por usted cuando solicita servicios, como iniciar sesión en su cuenta o completar formularios.",
+    "Cookies.DescriptionMessageThree": "Puede configurar su navegador para bloquear estas cookies o alertarle cuando están presentes; sin embargo, algunas partes de la aplicación web de Alborghetti no funcionarán sin ellas."
 }

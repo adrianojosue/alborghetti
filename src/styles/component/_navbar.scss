@@ -268,15 +268,8 @@ header.navbar {
             &.sidenav_user {
                 width: 100%;
                 justify-content: flex-start;
-
-                span {
-                    display: -webkit-box;
-                    -webkit-line-clamp: 1;
-                    -webkit-box-orient: vertical;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    color: $color_text;
-                }
+                color: $color_subtext;
+                font-weight: bold;
 
                 .user_img {
                     display: flex;

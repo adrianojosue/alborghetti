@@ -172,13 +172,13 @@ export const Navbar = () => {
                     </svg>
                 }
               </div>
-              <span className='line-clamp_1 margin-right_thin'>
+              <p className='line-clamp_1 margin-right_thin'>
                 {
                   (!!displayName === true)
-                  ? displayName
+                  ? displayName.split(' ')[0]
                   : email
                 }
-              </span>
+              </p>
             </NavLink>
             <SelectLang />
             <button className="sidenav_button" onClick={ onLogout }>
