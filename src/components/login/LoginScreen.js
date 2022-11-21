@@ -103,7 +103,11 @@ export const LoginScreen = () => {
               name="email"
               label="email"
               type="email"
-              placeholder="Email"
+              placeholder={
+                intl.formatMessage({
+                  id: 'App.InputEmailPlaceholder'
+                })
+              }
               autoComplete="off"
               value={ email }
               onChange={ onInputChange }
@@ -121,6 +125,7 @@ export const LoginScreen = () => {
               autoComplete="off"
               value={ password }
               onChange={ onInputChange }
+              required
             />
 
             {
@@ -187,7 +192,7 @@ export const LoginScreen = () => {
             </div>
           </form>
 
-          <span><FormattedMessage id='Auth.NewToMessage'/>  <NavLink to="/auth/register"><FormattedMessage id='Auth.SignUpMessage'/></NavLink></span>
+          <span><FormattedMessage id='Auth.NewToMessage'/>  <NavLink to="/auth/register"><FormattedMessage id='Auth.SignUp.Title'/></NavLink></span>
 
         </div>
       </motion.div>

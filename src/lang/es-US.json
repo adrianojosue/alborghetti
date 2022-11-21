@@ -6,14 +6,28 @@
     "Auth.ContinueButtonMessage": "Continuar",
     "Auth.OrOptionMessage": "o",
     "Auth.SignInGoogleMessage": "Inicia sesión con Google",
-    "Auth.NewToMessage": "¿Eres nuevo?",
-    "Auth.SignUpMessage": "Crea una cuenta",
+    "Auth.NewToMessage": "¿Nuevo en Alborghetti?",
+
+    "Auth.VerificationMessage": "por favor confirme su correo electrónico haciendo clic en el enlace que le acabamos de enviar.",
+    "Auth.ResendVerificationLinkDone": "Listo, revisa tu correo electrónico para confirmarlo",
+    "Auth.ResendVerificationLink": "Reenvíame el enlace de verificación",
+
+    "Auth.SignUp.Title": "Crea tu cuenta ahora",
+    "Auth.SignUp.InputName": "Nombre completo (Nombre y Apellido)",
+    "Auth.SignUp.HaveAccountMessage": "Tienes una cuenta?",
+    "Auth.SignUp.SignInInstead": "Mejor inicia sesión",
+    "Auth.SignUp.EmailRegexp": "Por favor Introduzca un formato de dirección de correo electrónico válido. Por ejemplo: nombre@gmail.com",
+    "Auth.SignUp.PasswordRegexp": "La contraseña debe tener al menos 8 caracteres, además de contener al menos una letra mayúscula y 1 número.",
+    "Auth.SignUp.NameRegexp": "Por favor ingrese su nombre y apellido, asegúrese de que no haya espacios extras ni caracteres adicionales como '!@$%#&.",
 
     "App.loading": "Cargando...",
     "App.SectionMessage": "Para",
     "App.LangMessage": "Idioma",
     "App.LangSpaMessage": "Esp",
     "App.LangEngMessage": "Ing",
+    "App.InputEmailPlaceholder": "Correo electrónico",
+    "App.InputPasswordPlaceholder": "Contraseña",
+    "App.Logout": "Cerrar sesión",
 
     "WhatsNewScreen.WelcomeMessage": "Bienvenido",
     "WhatsNewScreen.NewArrivals": "Nuevos lanzamientos",
@@ -57,5 +71,16 @@
 
     "Cookies.DescriptionMessageOne": "Las cookies y otras tecnologías similares son una parte esencial del funcionamiento de nuestra aplicación web. El objetivo principal de las cookies es hacer que su experiencia de navegación sea más fácil y eficiente, además de mejorar nuestros servicios y la propia aplicación en sí.",
     "Cookies.DescriptionMessageTwo": "Estas cookies generalmente se configuran para responder a acciones realizadas por usted cuando solicita servicios, como iniciar sesión en su cuenta o completar formularios.",
-    "Cookies.DescriptionMessageThree": "Puede configurar su navegador para bloquear estas cookies o alertarle cuando están presentes; sin embargo, algunas partes de la aplicación web de Alborghetti no funcionarán sin ellas."
+    "Cookies.DescriptionMessageThree": "Puede configurar su navegador para bloquear estas cookies o alertarle cuando están presentes; sin embargo, algunas partes de la aplicación web de Alborghetti no funcionarán sin ellas.",
+
+    "Firebase.UserDisableMessage": "Lo siento, esa cuenta fue deshabilitada 💀",
+    "Firebase.PopupCloseMessage": "No cierre la ventana emergente para que pueda iniciar sesión con su cuenta de Google 🤦‍♂️",
+    "Firebase.EmailAlreadyInUse": "Ese correo electrónico ya está en uso",
+    "Firebase.InternalErrorMessage": "Acaba de ocurrir un error interno 😱",
+    "Firebase.WrongPassword": "Esa contraseña es incorrecta",
+    "Firebase.UserNotFound": "Ese email no corresponde a ninguna cuenta de usuario",
+    "Firebase.MissingEmail": "Por favor, inserte su dirección de correo electrónico en el campo de arriba ☝️",
+    "Firebase.InvalidEmail": "Introduzca un formato de correo electrónico válido. Por ejemplo: nombre@gmail.com",
+    "Firebase.ToManyRequest": "Ha realizado demasiadas solicitudes, inténtelo de nuevo más tarde",
+    "Firebase.UnknownError": "¡Qué 🤨! Acaba de suceder un error desconocido 🤷‍♂️"
 }

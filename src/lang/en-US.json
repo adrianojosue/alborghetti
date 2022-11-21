@@ -1,5 +1,5 @@
 {
-    "Auth.SignInMessage": "Sign In",
+    "Auth.SignInMessage": "Sign in",
     "Auth.PasswordInputMessage": "Password",
     "Auth.ResetEmailMessage": "Send me a password reset email",
     "Auth.ResetEmailDone": "Done, check your email to reset your password",
@@ -7,13 +7,27 @@
     "Auth.OrOptionMessage": "or",
     "Auth.SignInGoogleMessage": "Sign in with Google",
     "Auth.NewToMessage": "New to Alborghetti?",
-    "Auth.SignUpMessage": "Sign Up Now",
+
+    "Auth.VerificationMessage": "please confirm your email by clicking on the link we just emailed you.",
+    "Auth.ResendVerificationLinkDone": "Done, check your email to confirm it",
+    "Auth.ResendVerificationLink": "Resend me the email verification link",
+
+    "Auth.SignUp.Title": "Sign up now",
+    "Auth.SignUp.InputName": "Full name (First and Last name)",
+    "Auth.SignUp.HaveAccountMessage": "Have a account?",
+    "Auth.SignUp.SignInInstead": "Sign in instead",
+    "Auth.SignUp.EmailRegexp": "Please insert a valid email address format. E.g.: name@gmail.com",
+    "Auth.SignUp.PasswordRegexp": "The password must be at least 8 characters, in addition to containing at least one capital letter and 1 number",
+    "Auth.SignUp.NameRegexp": "Please enter your first and last name, make sure there are no extra spaces or characters such as '!@$%#&",
 
     "App.loading": "Loading...",
     "App.SectionMessage": "For",
     "App.LangMessage": "Lang",
     "App.LangSpaMessage": "Spa",
     "App.LangEngMessage": "Eng",
+    "App.InputEmailPlaceholder": "Email",
+    "App.InputPasswordPlaceholder": "Password",
+    "App.Logout": "Logout",
 
     "WhatsNewScreen.WelcomeMessage": "Welcome",
     "WhatsNewScreen.NewArrivals": "New arrivals",
@@ -57,5 +71,16 @@
 
     "Cookies.DescriptionMessageOne": "Cookies and other similar technologies are an essential part of how our web app works. The main goal of cookies is to make your browsing experience easier and more efficient and to improve our services and the web app itself.",
     "Cookies.DescriptionMessageTwo": "Cookies are generally configured to respond to actions made by you when requesting services, such as logging in to your account or filling out forms.",
-    "Cookies.DescriptionMessageThree": "You can configure your browser to block these cookies or alert you when they are present; however, some parts of the Alborghetti web app will not work without them."
+    "Cookies.DescriptionMessageThree": "You can configure your browser to block these cookies or alert you when they are present; however, some parts of the Alborghetti web app will not work without them.",
+
+    "Firebase.UserDisableMessage": "Sorry, that account was disabled 💀",
+    "Firebase.PopupCloseMessage": "Please don't close the popup so you can sign in with your Google account 🤦‍♂️",
+    "Firebase.EmailAlreadyInUse": "That email is already in use",
+    "Firebase.InternalErrorMessage": "An unknown internal error just happened 😱",
+    "Firebase.WrongPassword": "That password was wrong",
+    "Firebase.UserNotFound": "That email doesn't correspond to any user account",
+    "Firebase.MissingEmail": "Please insert your email address in the field above ☝️",
+    "Firebase.InvalidEmail": "Please insert a valid email format. E.g.: name@mail.com",
+    "Firebase.ToManyRequest": "You have made too many requests, please try again later",
+    "Firebase.UnknownError": "What 🤨! An unknown error just happened 🤷‍♂️"
 }

@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { useForm } from '../../hooks';
 import { startCreatingAccountWithEmailAndPassword } from '../../store/auth';
 
@@ -17,13 +18,14 @@ const passwordRegexp = /^((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,})$/;
 const displayNameRegexp = /^(([a-zA-Z\u00C0-\u024F\u1E00-\u1EFF]{2,40}([.]{0,1}))( [a-zA-Z\u00C0-\u024F\u1E00-\u1EFF]{2,40}([.]{0,1}))+)$/;
 
 const formValidations = {
-  email: [ ( value ) => value.match(emailRegexp), `Please insert a valid email address format. E.g.: name@mail.com` ],
-  password: [ ( value ) => value.match(passwordRegexp), `The password must be at least 8 characters, in addition to containing at least one capital letter and 1 number.` ],
-  displayName: [ ( value ) => value.match(displayNameRegexp), `Please enter your first and last name, make sure there are no extra spaces or characters such as '!@$%#&.` ],
+  email: [ ( value ) => value.match(emailRegexp), <FormattedMessage id='Auth.SignUp.EmailRegexp'/> ],
+  password: [ ( value ) => value.match(passwordRegexp), <FormattedMessage id='Auth.SignUp.PasswordRegexp'/> ],
+  displayName: [ ( value ) => value.match(displayNameRegexp), <FormattedMessage id='Auth.SignUp.NameRegexp'/> ],
 }
 
 export const RegisterScreen = () => {
   const dispatch = useDispatch();
+  const intl = useIntl();
 
   const [ formSubmitted, setFormSubmitted ] = useState(false);
 
@@ -108,12 +110,16 @@ export const RegisterScreen = () => {
           </div>
 
           <form className="auth_form" onSubmit={ onSubmit }>
-            <h2>Create your account</h2>
+            <h2><FormattedMessage id='Auth.SignUp.Title'/></h2>
             <input
               name="displayName"
               label="displayName"
               type="text"
-              placeholder="Full name (First and Last name)"
+              placeholder={
+                intl.formatMessage({
+                  id: 'Auth.SignUp.InputName'
+                })
+              }
               autoComplete="off"
               value={ displayName }
               onChange={ onInputChange }
@@ -141,7 +147,11 @@ export const RegisterScreen = () => {
               name="email"
               label="email"
               type="email"
-              placeholder="Email"
+              placeholder={
+                intl.formatMessage({
+                  id: 'App.InputEmailPlaceholder'
+                })
+              }
               autoComplete="off"
               value={ email }
               onChange={ onInputChange }
@@ -168,7 +178,11 @@ export const RegisterScreen = () => {
               name="password"
               label="password"
               type="password"
-              placeholder="Password"
+              placeholder={
+                intl.formatMessage({
+                  id: 'App.InputPasswordPlaceholder'
+                })
+              }
               autoComplete="off"
               value={ password }
               onChange={ onInputChange }
@@ -202,11 +216,11 @@ export const RegisterScreen = () => {
                 whileTap={{
                   scale: 1,
                 }}
-              >Create account</motion.button>
+              ><FormattedMessage id='Auth.ContinueButtonMessage'/></motion.button>
             </div>
           </form>
 
-          <span>Have a account? <NavLink to="/auth/login">Sign In instead</NavLink></span>
+          <span><FormattedMessage id='Auth.SignUp.HaveAccountMessage'/> <NavLink to="/auth/login"><FormattedMessage id='Auth.SignUp.SignInInstead'/></NavLink></span>
 
         </div>
       </motion.div>
