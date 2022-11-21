@@ -48,7 +48,7 @@ export const Navbar = () => {
   }
 
   // List of items in the bag
-  const listBagItems = items.length;
+  const listBagItems = items.map( l => l.quantity).reduce((sum, list) => sum + list, 0);
   const NewListBagItems = useMemo( () => {
     return listBagItems > 9 ? '9+' : listBagItems;
   }, [listBagItems]);

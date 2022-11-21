@@ -15,7 +15,7 @@ export const BagScreen = () => {
     const [ loader, setLoader ] = useState(null);
     const [ payWithPaypal, setPayWithPaypal ] = useState(false);
 
-    const listBagItems = items.length;
+    const listBagItems = items.map( l => l.quantity).reduce((sum, list) => sum + list, 0);
 
     const itemPrices = items.map( item => item.price * item.quantity);
     const subtotal = itemPrices.reduce((sum, item) => sum + item, 0);
