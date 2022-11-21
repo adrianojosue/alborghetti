@@ -29,7 +29,7 @@ export const HelpScreen = () => {
                         <a href="tel:+18090000000">+1 (809) 000-0000</a>
                     </span>
 
-                    <h3>Email:</h3>
+                    <h3><FormattedMessage id='App.InputEmailPlaceholder' />:</h3>
                     <span className="margin-bottom_small">
                         <a href="mailto:help@email.com">help@email.com</a>
                     </span>

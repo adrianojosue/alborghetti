@@ -16,6 +16,7 @@ import { ItemsData } from "../components/items/ItemsData";
 import { OrderApproved } from '../components/orderApproved';
 import { CookiesScreen } from "../components/cookies";
 import { HelpScreen } from "../components/help";
+import { AboutUs } from "../components/AboutUs";
 
 export const DashboardRoutes = () => {
 
@@ -41,6 +42,7 @@ export const DashboardRoutes = () => {
               <Route path="/items" element={<ItemsData />} />
               <Route path="/cookies" element={<CookiesScreen />} />
               <Route path="/help" element={<HelpScreen />} />
+              <Route path="/aboutus" element={<AboutUs />} />
               <Route path="/" element={<WhatsNewScreen />} />
               <Route path="*" element={ <NotFoundScreen /> } />
               <Route path="/auth/*" element={ <Navigate to='/' /> } />

@@ -54,7 +54,7 @@ export const Footer = () => {
       </div>
 
       <div className="footer_navbar">
-        <NavLink className={ ({ isActive }) => '' + ( isActive ? ' active' : '') } to="/about">
+        <NavLink className={ ({ isActive }) => '' + ( isActive ? ' active' : '') } to="/aboutus">
           <FormattedMessage id='Footer.MenuAbout'/>
         </NavLink>
         <NavLink className={ ({ isActive }) => '' + ( isActive ? ' active' : '') } to="/help">
