@@ -20,6 +20,11 @@
         padding: $size_medium $size_medium 0 $size_medium;
         overflow: hidden;
 
+        &:nth-child(1) {
+            border: 1px solid $color_primary-clearer;
+            background-color: $color_primary-darker;
+        }
+
         .container {
             display: flex;
             flex-direction: column;
@@ -32,6 +37,9 @@
 
             .container-logo {
                 padding: 0 $size_large 0 $size_large;
+                svg {
+                    width: 100%;
+                }
             }
 
             div {
@@ -81,7 +89,7 @@
             justify-self: center;
             align-self: end;
 
-            background-image: url('../../../public/assets/images/screen_shoot.webp');
+            background-image: url('../../../public/assets/images/background-cigars.webp');
             background-repeat: no-repeat;
             background-position: center 0;
             background-size: cover;

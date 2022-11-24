@@ -16,20 +16,18 @@ export const LandingPage = () => {
             >
                 <section>
                     <div className="container">
-                        <motion.div
-                            className='container-logo'
-                            initial={{ scale: 1 }}
-                            animate={{ scale: 1.2 }}
-                            exit={{ scale: 1 }}
-                        >
+                        <div className='container-logo'>
                             <AlborghettiLogo />
-                        </motion.div>
-                        <motion.h2
-                            initial={{ opacity: 0, y: -100 }}
-                            animate={{ opacity: 1, y: 1 }}
-                        >
-                            <span><FormattedMessage id='LandingPage.Message'/></span>
-                        </motion.h2>
+                            <motion.span
+                                initial={{ opacity: 0, y: -100 }}
+                                animate={{ opacity: 1, y: 1 }}
+                                transition={{
+                                    type: 'just'
+                                }}
+                            >
+                                <FormattedMessage id='LandingPage.Message'/>
+                            </motion.span>
+                        </div>
 
                         <div className="action_buttons">
                             <Link
@@ -57,6 +55,10 @@ export const LandingPage = () => {
                         initial={{opacity: 0, y: 100 }}
                         animate={{opacity: 1, y: 0 }}
                         exit={{opacity: 0, y: 100 }}
+                        transition={{
+                            duration: 0.5,
+                            type: 'just'
+                        }}
                     >
                     </motion.div>
                 </section>
