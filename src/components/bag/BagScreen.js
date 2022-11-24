@@ -75,7 +75,7 @@ export const BagScreen = () => {
                                 ? <motion.h1 initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}><FormattedMessage id='bagScreen.FilledBagMessage'/></motion.h1>
                                 : <motion.h1 initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}><FormattedMessage id='bagScreen.EmptyBagMessage'/></motion.h1>
                             }
-                            <h2><span>{listBagItems} {listBagItems === 1 ? <FormattedMessage id='bagScreen.OneItemMessage'/> : <FormattedMessage id='bagScreen.MultiplesItemMessage'/>}</span></h2>
+                            <h2 className='list-bag-items'><span>{listBagItems} {listBagItems === 1 ? <FormattedMessage id='bagScreen.OneItemMessage'/> : <FormattedMessage id='bagScreen.MultiplesItemMessage'/>}</span></h2>
                         </div>
                         <ul className="bag_items">
                             {

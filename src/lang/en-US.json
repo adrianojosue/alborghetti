@@ -1,4 +1,8 @@
 {
+    "LandingPage.Message": "Quality cigars with the unique flavor of the Dominican Republic",
+    "LandingPage.SignUp": "Sign up to buy yours now",
+    "LandingPage.SignIn": "Already a member? Sign in",
+
     "Auth.SignInMessage": "Sign in",
     "Auth.PasswordInputMessage": "Password",
     "Auth.ResetEmailMessage": "Send me a password reset email",
@@ -39,6 +43,7 @@
     "Help.ScheduleWeekend": "Sat",
 
     "AboutUs.title": "About us",
+    "AboutUs.Info": "Our cigars have been made after a careful selection of wrapper, filler and binder leaves from the Dominican Republic, and produced by expert Dominican cigar rollers.",
 
     "Footer.MenuAbout": "About Us",
     "Footer.MenuHelp": "Help",

@@ -1,4 +1,8 @@
 {
+    "LandingPage.Message": "Cigarros de calidad con el sabor único de la República Dominicana",
+    "LandingPage.SignUp": "Regístrate para comprar el tuyo ahora",
+    "LandingPage.SignIn": "¿Ya eres usuario? Inicia sesión",
+
     "Auth.SignInMessage": "Inicia Sesión",
     "Auth.PasswordInputMessage": "Contraseña",
     "Auth.ResetEmailMessage": "Envíame un email para cambiar la contraseña",
@@ -14,7 +18,7 @@
 
     "Auth.SignUp.Title": "Crea tu cuenta ahora",
     "Auth.SignUp.InputName": "Nombre completo (Nombre y Apellido)",
-    "Auth.SignUp.HaveAccountMessage": "Tienes una cuenta?",
+    "Auth.SignUp.HaveAccountMessage": "¿Tienes una cuenta?",
     "Auth.SignUp.SignInInstead": "Mejor inicia sesión",
     "Auth.SignUp.EmailRegexp": "Por favor Introduzca un formato de dirección de correo electrónico válido. Por ejemplo: nombre@gmail.com",
     "Auth.SignUp.PasswordRegexp": "La contraseña debe tener al menos 8 caracteres, además de contener al menos una letra mayúscula y 1 número.",
@@ -39,6 +43,7 @@
     "Help.ScheduleWeekend": "Sáb",
 
     "AboutUs.title": "Sobre nosotros",
+    "AboutUs.Info": "Nuestros habanos se han elaborado tras una esmerada selección de las hojas de capa, tripa y capote de la República Dominicana, y producidos por expertos torcedores dominicanos.",
 
     "Footer.MenuAbout": "Nosotros",
     "Footer.MenuHelp": "Ayuda",
@@ -48,7 +53,7 @@
 
     "Menu.SectionTitle": "Secciones",
     "Menu.SectionTitleTwo": "Zapatos",
-    "Menu.WhatsNew": "Qué hay de nuevo?",
+    "Menu.WhatsNew": "¿Qué hay de nuevo?",
     "Menu.SectionMen": "Hombre",
     "Menu.SectionWomen": "Mujer",
 

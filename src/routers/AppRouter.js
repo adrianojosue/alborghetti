@@ -26,9 +26,9 @@ export const AppRouter = () => {
               ? <EmailVerifiedScreen />
               : <DashboardRoutes />
           } />
-          : <Route path="/auth/*" element={<AuthRoutes />} />
+          : <Route path="*" element={<AuthRoutes />} />
         }
-        <Route path='*' element={ <Navigate to='/auth/login' /> } />
+        <Route path='*' element={ <Navigate to='/' /> } />
       </Routes>
     </BrowserRouter>
   )

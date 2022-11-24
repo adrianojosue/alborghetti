@@ -9,6 +9,7 @@ span {
 .bag_info {
     margin-bottom: $size_x-large;
 }
+
 .bag_items {
     display: flex;
     flex-direction: column;
@@ -54,17 +55,17 @@ span {
             }
         }
 
-       .options {
-            display: flex;
-            flex-direction: column;
-            gap: $size_light;
-            justify-content: space-between;
-            button {
-                background-color: $color_primary-clearer;
-                border: none;
-                align-self: flex-end;
-            }
-       }
+        .options {
+                display: flex;
+                flex-direction: column;
+                gap: $size_light;
+                justify-content: space-between;
+                button {
+                    background-color: $color_primary-clearer;
+                    border: none;
+                    align-self: flex-end;
+                }
+        }
     }
 }
 .bag_summary {
