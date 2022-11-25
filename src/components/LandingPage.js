@@ -31,7 +31,7 @@ export const LandingPage = () => {
 
                         <div className="action_buttons">
                             <Link
-                                to="/register"
+                                to="/auth/signup"
                             >
                                 <motion.button
                                     className='accent'
@@ -45,7 +45,7 @@ export const LandingPage = () => {
                                     <FormattedMessage id='LandingPage.SignUp'/>
                                 </motion.button>
                             </Link>
-                            <Link to="/login">
+                            <Link to="/auth/login">
                                 <motion.button className='normal'><FormattedMessage id='LandingPage.SignIn'/></motion.button>
                             </Link>
                         </div>

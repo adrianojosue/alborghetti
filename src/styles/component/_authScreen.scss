@@ -16,11 +16,16 @@
         padding: $size_medium;
 
         .auth_logo {
-            display: grid;
+            display: flex;
             justify-content: center;
+            gap: $size_small;
             align-items: center;
             width: 100%;
             padding: $size_medium;
+
+            button {
+                background-color: transparent;
+            }
         }
         
         .auth_form {

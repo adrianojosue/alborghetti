@@ -5,7 +5,6 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import { useForm } from '../../hooks';
 import { startCreatingAccountWithEmailAndPassword } from '../../store/auth';
 import { GoogleSignIn } from '../ui/GoogleSignIn';
-import { AlborghettiLogo } from './../AlborghettiLogo';
 
 import { motion } from "framer-motion";
 
@@ -25,7 +24,7 @@ const formValidations = {
   displayName: [ ( value ) => value.match(displayNameRegexp), <FormattedMessage id='Auth.SignUp.NameRegexp'/> ],
 }
 
-export const RegisterScreen = () => {
+export const SignupScreen = () => {
   const dispatch = useDispatch();
   const intl = useIntl();
 
@@ -59,20 +58,13 @@ export const RegisterScreen = () => {
   }
 
   return (
-    <>
-      <motion.div
-        className="auth_content"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-      >
-        <div className="auth_wrapper">
-          <div className="auth_logo">
-            <Link to='/'>
-              <AlborghettiLogo />
-            </Link>
-          </div>
-
+        <>
+        <motion.div
+          className='auth_wrapper'
+          initial={{opacity: 0, x: 100}}
+          animate={{opacity: 1, x: 0}}
+          exit={{opacity: 0, x: 0}}
+        >
           <form className="auth_form" onSubmit={ onSubmit }>
             <h2><FormattedMessage id='Auth.SignUp.Title'/></h2>
             <input
@@ -186,10 +178,8 @@ export const RegisterScreen = () => {
             </div>
           </form>
 
-          <span><FormattedMessage id='Auth.SignUp.HaveAccountMessage'/> <Link to="/login"><FormattedMessage id='Auth.SignUp.SignInInstead'/></Link></span>
-
-        </div>
-      </motion.div>
-    </>
+          <span><FormattedMessage id='Auth.SignUp.HaveAccountMessage'/> <Link to="/auth/login"><FormattedMessage id='Auth.SignUp.SignInInstead'/></Link></span>
+        </motion.div>
+        </>
   )
 }
