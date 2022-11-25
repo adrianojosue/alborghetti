@@ -13,6 +13,8 @@ export const Navbar = () => {
   const { displayName, photoURL, email } = useSelector( state => state.auth);
   const { items } = useSelector( state => state.bag );
 
+  const dispatch = useDispatch();
+
   window.addEventListener('scroll', () => {
     document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`)
   })
@@ -37,8 +39,8 @@ export const Navbar = () => {
   }
 
   // Firebase Logout
-  const dispatch = useDispatch();
   const onLogout = () => {
+    toggleSidenav()
     dispatch( startLogoutFirebase() );
   }
 

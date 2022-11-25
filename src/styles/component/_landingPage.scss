@@ -21,7 +21,7 @@
         overflow: hidden;
 
         &:nth-child(1) {
-            border: 1px solid $color_primary-clearer;
+            border-bottom: 1px solid $color_primary-clearer;
             background-color: $color_primary-darker;
         }
 
