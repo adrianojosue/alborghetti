@@ -25,7 +25,7 @@
     "Auth.SignUp.NameRegexp": "Please enter your first and last name, make sure there are no extra spaces or characters such as '!@$%#&",
 
     "App.loading": "Loading...",
-    "App.SectionMessage": "For",
+    "App.SectionMessage": "for",
     "App.LangMessage": "Lang",
     "App.LangSpaMessage": "Spa",
     "App.LangEngMessage": "Eng",

@@ -2,6 +2,9 @@ import { createUserWithEmailAndPassword, GoogleAuthProvider, sendPasswordResetEm
 import { firebaseAuth } from './config';
 import { FirebaseHandleErrors } from './firebaseHandleErrors';
 
+const currentLang = localStorage.getItem('langApp');
+firebaseAuth.languageCode = currentLang;
+
 const googleProvider = new GoogleAuthProvider();
 
 export const signInWithGoogle = async () => {

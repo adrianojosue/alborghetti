@@ -88,14 +88,22 @@ export const ShoesScreen = () => {
       <Helmet>
         <title>Alborghetti Store: {shoe.name}</title>
         <meta property="og:title" content={'Alborghetti Store: ' + shoe.name} />
-
+        <meta property="og:site_name" content='alborghettistore.web.app' />
         <meta name="description" content={shoe.description} />
         <meta property="og:description" content={shoe.description} />
-
         <meta property="og:url" content={window.location.href} />
         <meta property="og:type" content="article" />
-        
   	    <meta property="og:image" content={shoe.colors[0].color_images[0]} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@alborghettistore" />
+        <meta name="twitter:creator" content="@alborghettistore" />
+        <meta name="twitter:title" content={ shoe.name } />
+        <meta name="twitter:description" content={ shoe.description } />
+        <meta name="twitter:image" content={ shoe.colors[0].color_images[0] } />
+
+        <meta property="og:price:currency" content="USD" />
+        <meta property="og:price:amount" content={priceFormat(shoe.colors[0].price)} />
       </Helmet>
 
       <motion.div

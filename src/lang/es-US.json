@@ -25,7 +25,7 @@
     "Auth.SignUp.NameRegexp": "Por favor ingrese su nombre y apellido, asegúrese de que no haya espacios extras ni caracteres adicionales como '!@$%#&.",
 
     "App.loading": "Cargando...",
-    "App.SectionMessage": "Para",
+    "App.SectionMessage": "para",
     "App.LangMessage": "Idioma",
     "App.LangSpaMessage": "Esp",
     "App.LangEngMessage": "Ing",
