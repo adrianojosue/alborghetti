@@ -44,13 +44,13 @@ export const LoginScreen = () => {
 
   return (
           <>
-          <motion.div
-            className='auth_wrapper'
-            initial={{opacity: 0, x: 100}}
-            animate={{opacity: 1, x: 0}}
-            exit={{opacity: 0, x: 0}}
-          >
-            <form className="auth_form" onSubmit={ onSubmit }>
+            <motion.form
+              className="auth_form"
+              onSubmit={ onSubmit }
+              initial={{opacity: 0, x: 100}}
+              animate={{opacity: 1, x: 0}}
+              exit={{opacity: 0, x: 0}}
+            >
               <h2><FormattedMessage id='Auth.SignInMessage'/></h2>
               <input
                 name="email"
@@ -81,7 +81,6 @@ export const LoginScreen = () => {
                 required
               />
 
-              <div>
                 {
                   ( errorMessage === 'not-error' )
                   ? <span>
@@ -112,7 +111,6 @@ export const LoginScreen = () => {
                       </svg>
                     </span>
                 }
-              </div>
               
               <div className="auth_options">
                 <motion.button
@@ -129,10 +127,9 @@ export const LoginScreen = () => {
                 <span><FormattedMessage id='Auth.OrOptionMessage'/></span>
                   <GoogleSignIn />
               </div>
-            </form>
+            </motion.form>
 
             <span><FormattedMessage id='Auth.NewToMessage'/>  <Link to="/auth/signup"><FormattedMessage id='Auth.SignUp.Title'/></Link></span>
-            </motion.div>
           </>
   )
 }

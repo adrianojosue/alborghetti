@@ -3,7 +3,7 @@
     "LandingPage.SignUp": "Regístrate para comprar el tuyo ahora",
     "LandingPage.SignIn": "¿Ya eres usuario? Inicia sesión",
 
-    "Auth.SignInMessage": "Inicia Sesión",
+    "Auth.SignInMessage": "Inicia sesión",
     "Auth.PasswordInputMessage": "Contraseña",
     "Auth.ResetEmailMessage": "Envíame un email para cambiar la contraseña",
     "Auth.ResetEmailDone": "Listo, revisa tu email para cambiar tu contraseña",

@@ -59,13 +59,13 @@ export const SignupScreen = () => {
 
   return (
         <>
-        <motion.div
-          className='auth_wrapper'
-          initial={{opacity: 0, x: 100}}
-          animate={{opacity: 1, x: 0}}
-          exit={{opacity: 0, x: 0}}
-        >
-          <form className="auth_form" onSubmit={ onSubmit }>
+          <motion.form
+            className="auth_form"
+            onSubmit={ onSubmit }
+            initial={{opacity: 0, x: 100}}
+            animate={{opacity: 1, x: 0}}
+            exit={{opacity: 0, x: 0}}
+          >
             <h2><FormattedMessage id='Auth.SignUp.Title'/></h2>
             <input
               name="displayName"
@@ -176,10 +176,9 @@ export const SignupScreen = () => {
               <span><FormattedMessage id='Auth.OrOptionMessage'/></span>
               <GoogleSignIn />
             </div>
-          </form>
+          </motion.form>
 
           <span><FormattedMessage id='Auth.SignUp.HaveAccountMessage'/> <Link to="/auth/login"><FormattedMessage id='Auth.SignUp.SignInInstead'/></Link></span>
-        </motion.div>
         </>
   )
 }
