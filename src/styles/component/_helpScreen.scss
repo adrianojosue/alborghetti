@@ -11,6 +11,12 @@
         object-fit: cover;
     }
 
+    h1 {
+        span {
+            color: inherit;
+        }
+    }
+
     hr {
         display: block;
         height: $size_medium;

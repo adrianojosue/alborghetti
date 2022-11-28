@@ -230,7 +230,7 @@ export const BagScreen = () => {
                                         }}
                                         onApprove={ async (data, actions) => {
                                             const order = await actions.order.capture()
-                                            console.log(order)
+                                            // console.log(order)
                                             paypalHandleApprove(data.orderID)
                                         }}
                                         onShippingChange={(data, actions) => {
