@@ -10,6 +10,7 @@ import { FormattedMessage } from 'react-intl';
 export const BagScreen = () => {
 
     const { items, isSaving } = useSelector( state => state.bag );
+    const { lang } = useSelector( state => state.lang );
     const dispatch = useDispatch();
 
     const [ loader, setLoader ] = useState(null);
@@ -39,7 +40,7 @@ export const BagScreen = () => {
 
     const purchase_items = items.map( (item, index) => {
         return {
-            name: `${item.name} in ${item.color} color`,
+            name: `${lang === 'es' ? 'Caja' : 'Box' } ${item.box} ${lang === 'es' ? 'de' : 'of' } Alborghetti ${item.name}`,
             quantity: item.quantity,
             unit_amount: {
                 currency_code: 'USD',
@@ -81,12 +82,12 @@ export const BagScreen = () => {
                             {
                                 items.map( (item, index) => (
                                     <li className="bag_item" key={item.id}>
-                                        <Link to={`/shoes/${item.gender}/${item.itemId}`} >
+                                        <Link to={`/${item.type.en.toLowerCase().trim() + 's'}/${item.itemId}`} >
                                             <div className="content">
                                                 <div className="image" style={{ backgroundImage: `url(${ item.image })` }} />
                                                 <div className="info">
                                                     <h2 className="line-clamp_2">{item.name}</h2>
-                                                    <span className="line-clamp_1">{item.color}</span>
+                                                    <span className="line-clamp_1"><FormattedMessage id='Item.Box'/> {item.box}</span>
                                                     <p className="price line-clamp_1">US{priceFormat(item.price * item.quantity)}</p>
                                                 </div>
                                             </div>
@@ -229,7 +230,7 @@ export const BagScreen = () => {
 
                                         }}
                                         onApprove={ async (data, actions) => {
-                                            const order = await actions.order.capture()
+                                            // const order = await actions.order.capture()
                                             // console.log(order)
                                             paypalHandleApprove(data.orderID)
                                         }}

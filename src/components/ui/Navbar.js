@@ -203,13 +203,8 @@ export const Navbar = () => {
                 <li><FormattedMessage id='Menu.WhatsNew'/></li>
               </NavLink>
 
-              <h2 className='sidenav_section-divider'><FormattedMessage id='Menu.SectionTitleTwo'/></h2>
-
-              <NavLink className={ ({ isActive }) => 'sidenav_item' + ( isActive ? ' active' : '') } to="/shoes/mens" onClick={ toggleSidenav }>
+              <NavLink className={ ({ isActive }) => 'sidenav_item' + ( isActive ? ' active' : '') } to="/cigars" onClick={ toggleSidenav }>
                 <li><FormattedMessage id='Menu.SectionMen'/></li>
-              </NavLink>
-              <NavLink className={ ({ isActive }) => 'sidenav_item' + ( isActive ? ' active' : '') } to="/shoes/womens" onClick={ toggleSidenav }>
-                <li><FormattedMessage id='Menu.SectionWomen'/></li>
               </NavLink>
 
           </ul>

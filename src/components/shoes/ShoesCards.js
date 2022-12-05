@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { priceFormat } from '../../helpers/priceFormat';
+import { FormattedMessage } from 'react-intl';
 
 export const ShoesCards = ({
 
@@ -8,20 +9,14 @@ export const ShoesCards = ({
     name,
     brand,
     type,
-    gender,
-    size,
-    collection,
     model,
     description,
-    colors,
-    images,
-    launched_at,
-    available,
+    boxes,
 
 }) => {
 
     const image = {
-        backgroundImage: `url(${colors[0].color_images[0]})`,
+        backgroundImage: `url(${boxes[0].images[0]})`,
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'bottom center',
         backgroundSize: 'cover',
@@ -30,7 +25,7 @@ export const ShoesCards = ({
 
     return (
         <>
-            <Link to={`/shoes/${gender}/${id}`} >
+            <Link to={`/${type.en.toLowerCase().trim() + 's'}/${id}`} >
                 <motion.article
                     className="card"
                     initial={{opacity: 0}}
@@ -44,16 +39,16 @@ export const ShoesCards = ({
                     </div>
                     <div className="card_info">
                         <h1>{ name }</h1>
-                        <ul className="container_item-color"><p>Colors</p>
+                        <ul className="container_item-color"><p><FormattedMessage id='Item.Box'/></p>
                             {
-                                colors.map( data => {
+                                boxes.map( (data, index) => {
                                     return(
-                                        <li className="item_color" style={{ backgroundColor: [data.color_hex] }} key={ data.color_id }></li>
+                                        <li className="item_color" key={ index }>{data.name}</li>
                                     )
                                 })
                             }
                         </ul>
-                        <ul className="container_item-price"><li className='normal_price'>US{ priceFormat(colors[0].price) }</li></ul>
+                        <ul className="container_item-price"><li className='normal_price'>US{ priceFormat(boxes[0].price) }</li></ul>
                     </div>
                 </motion.article>
             </Link>

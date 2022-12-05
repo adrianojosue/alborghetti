@@ -1,7 +1,4 @@
 .cards-carousel {
-    /* display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 300px; */
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -12,9 +9,9 @@
     overscroll-behavior-inline: contain;
     padding: $size_small 0;
 
-    scroll-snap-type: inline mandatory;
+    scroll-snap-type: x mandatory; // inline
     column-gap: $size_small;
-
+    scroll-padding: 0;
     
     align-items: center;
     align-content: center;
@@ -24,8 +21,8 @@
     scrollbar-width: thin;
     scrollbar-color: dark;
 
-    > * {
-        scroll-snap-align: center;
+    .card {
+        width: 300px;
     }
 
     @media (min-width: 481px) {
@@ -37,14 +34,24 @@
         overflow-x: hidden;
     }
 
-    .card {
-        width: 300px;
+    .card_more-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        min-height: 465.5px;
+        
+        span {
+            font-size: $size_z-large;
+            color: $color_primary-darker;
+        }
     }
     
     .card-carousel_container {
 
         transform: translateX(calc(max(1024px, 100vw)/2 - 499px));
-
+        scroll-snap-align: center;
         transition: all 0.3s;
 
         &:last-child {
@@ -110,6 +117,7 @@
 
         h1 {
             font-size: $size_medium;
+            color: $color_primary-darker;
         }
 
         h1, p, li {
@@ -124,7 +132,6 @@
             border-top: 1px solid $color_subtext;
             color: $color_price;
             font-weight: bold;
-            font-size: 20px;
             padding-top: $size_light;
             margin-top: $size_medium;
         }
@@ -155,14 +162,19 @@
             }
 
             .item_color {
-                color: #fff;
+                color: $color_primary-clearer;
                 margin-left: $size_thin;
-                border: solid 1px rgba($color_primary, 1);
-                border-radius: $radius_primary;
-                font-size: $size_12px;
+                border-radius: $radius_secondary;
+                padding: $size_light;
                 flex-grow: 0;
-                width: $size_x-small;
-                height: $size_x-small;
+                min-width: $size_large;
+                border: solid 1px rgba($color_primary-clearer, 1);
+                text-align: center;
+
+                &:nth-child(2) {
+                    background-color: $color_primary-clearer;
+                    color: $color_text;
+                }
             }
         }
     }

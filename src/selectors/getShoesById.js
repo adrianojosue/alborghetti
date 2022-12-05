@@ -1,5 +1,5 @@
-import { shoes } from '../data/shoes_v2';
+import { itemsData } from '../data/itemsData';
 
 export const getShoesById = ( id = '' ) => {
-    return shoes.find( shoe => shoe.id === id);
+    return itemsData.find( shoe => shoe.id === id);
 }

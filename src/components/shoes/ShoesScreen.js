@@ -13,6 +13,7 @@ import { FormattedMessage } from 'react-intl';
 export const ShoesScreen = () => {
 
   const { items } = useSelector( state => state.bag );
+  const { lang } = useSelector( state => state.lang );
 
   const { id } = useParams();
 
@@ -23,10 +24,11 @@ export const ShoesScreen = () => {
   const { isSaving } = useSelector( state => state.bag );
 
   const [ itemColor, setItemColor ] = useState({
-    checked: '0',
-    backgroundImage: shoe.colors[0].color_images,
-    color_name: shoe.colors[0].color_name,
-    price: shoe.colors[0].price,
+    checked: shoe.boxes[0].id,
+    backgroundImage: shoe.boxes[0].images,
+    box: shoe.boxes[0].name,
+    boxId: shoe.boxes[0].id,
+    price: shoe.boxes[0].price,
   });
 
   const [ image, setImage ] = useState(0);
@@ -49,9 +51,11 @@ export const ShoesScreen = () => {
   const newBagItem = {
     itemId: shoe.id,
     name: shoe.name,
-    color: itemColor.color_name,
+    box: itemColor.box,
+    boxId: itemColor.checked,
     image: itemColor.backgroundImage[0],
     price: itemColor.price,
+    type: shoe.type,
     quantity: Number(1),
     date: new Date().getTime(),
   }
@@ -60,20 +64,10 @@ export const ShoesScreen = () => {
     dispatch( startSavingBagItems( newBagItem ) )
   }
 
-  // filter current bag item
-  const mapBagItems = items.map( mapItem => mapItem.itemId)
-  const searchCurrentBagItem = () => {
-    for (let current of mapBagItems) {
-      if ( current === shoe.id ) {
-        return current;
-      }
-    }
-  }
-
-  const mapBagItemsByColor = items.map( mapItemColor => mapItemColor.color)
+  const mapBagItemsByColor = items.map( mapItemColor => mapItemColor.boxId)
   const searchCurrentBagItemByColor = () => {
     for (let current of mapBagItemsByColor) {
-      if ( current === itemColor.color_name ) {
+      if ( current === itemColor.boxId ) {
         return current;
       }
     }
@@ -93,17 +87,17 @@ export const ShoesScreen = () => {
         <meta property="og:description" content={shoe.description} />
         <meta property="og:url" content={window.location.href} />
         <meta property="og:type" content="article" />
-  	    <meta property="og:image" content={shoe.colors[0].color_images[0]} />
+  	    <meta property="og:image" content={shoe.boxes[0].images[0]} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@alborghettistore" />
         <meta name="twitter:creator" content="@alborghettistore" />
         <meta name="twitter:title" content={ shoe.name } />
         <meta name="twitter:description" content={ shoe.description } />
-        <meta name="twitter:image" content={ shoe.colors[0].color_images[0] } />
+        <meta name="twitter:image" content={ shoe.boxes[0].images[0] } />
 
         <meta property="og:price:currency" content="USD" />
-        <meta property="og:price:amount" content={priceFormat(shoe.colors[0].price)} />
+        <meta property="og:price:amount" content={priceFormat(shoe.boxes[0].price)} />
       </Helmet>
 
       <motion.div
@@ -116,49 +110,49 @@ export const ShoesScreen = () => {
 
           <div className="content_left_item-info">
               <div className="item_options">
-                <NavLink to={`/shoes/${shoe.gender}`}>
+                <NavLink to={`/${shoe.type.en.toLowerCase().trim() + 's'}`}>
                   <button className='btn gender_section'>
                     <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M3.94373 23.4336H15.2581C16.1328 23.4336 16.8178 23.1736 17.313 22.6537C17.8081 22.1338 18.0557 21.354 18.0557 20.3141V9.27214C18.0557 8.2323 17.7937 7.45449 17.2696 6.93872C16.7456 6.42292 15.9554 6.16502 14.8991 6.16502H3.94373C2.89565 6.16502 2.10752 6.42292 1.57935 6.93872C1.05119 7.45449 0.787109 8.2323 0.787109 9.27214V20.3141C0.787109 21.354 1.05119 22.1338 1.57935 22.6537C2.10752 23.1736 2.89565 23.4336 3.94373 23.4336ZM3.00295 4.6548H15.8399C15.7491 4.1514 15.5717 3.76765 15.3076 3.50357C15.0435 3.23949 14.635 3.10744 14.0821 3.10744H4.76075C4.20783 3.10744 3.79932 3.23949 3.53524 3.50357C3.27115 3.76765 3.09372 4.1514 3.00295 4.6548ZM4.74836 1.84479H14.0944C14.0614 1.37439 13.9108 1.02159 13.6426 0.786393C13.3744 0.551194 12.9845 0.433594 12.4728 0.433594H6.37C5.85834 0.433594 5.46841 0.551194 5.2002 0.786393C4.93198 1.02159 4.78136 1.37439 4.74836 1.84479Z" fill="none"/>
                     </svg>
                   </button>
                 </NavLink>
-              <span><FormattedMessage id='App.SectionMessage'/> { shoe.gender }:</span>
+              <span>{ shoe.type[lang] + 's' }:</span>
               </div>
 
               <div className="item_info">
                 <h1>{ shoe.name }</h1>
 
-                <form className="item_colors">
+                <ul className="item_colors">
+                  <li><FormattedMessage id='Item.Box'/></li>
                   {
-                      shoe.colors.map( (color, index) => (
-                        <label className="colors-label" key={index} id={color.color_id}>
-                          <input
-                            type='radio'
-                            id={color.color_id}
-                            key={ index }
-                            name={color.color_name}
-                            value={color.color_id}
-                            checked={ itemColor.checked === `${color.color_id}` }
-                            onChange={ (e) => {
-                              /* setImage(0) */
-                              setItemColor({
-                                checked: e.target.value,
-                                backgroundImage: color.color_images,
-                                color_name: color.color_name,
-                                price: color.price,
-                              })
-                            }}
-                            className="colors"
-                            style={{ backgroundColor: [color.color_hex] }}
-                          />
-                          { color.color_name.toUpperCase().replace('_', ' ') }
-                        </label>
+                      shoe.boxes.map( (box, index) => (
+                          <li key={index}>
+                            <input
+                              type='radio'
+                              id={box.id}
+                              name={box.name[lang]}
+                              value={box.id}
+                              checked={ itemColor.checked === `${box.id}` }
+                              onChange={ (e) => {
+                                setImage(0)
+                                setItemColor({
+                                  checked: e.target.value,
+                                  backgroundImage: box.images,
+                                  box: box.name,
+                                  boxId: box.id,
+                                  price: box.price,
+                                })
+                              }}
+                              className="colors"
+                            />
+                            <label className="colors-label" htmlFor={box.id} id={box.id}>{ box.name.toUpperCase() }</label>
+                          </li>
                       ))
                   }
-                </form>
+                </ul>
 
-                <p>{ shoe.description }</p>
+                <p>{ shoe.description[lang] }</p>
 
                 <div className="item_info-options">
                   
@@ -167,7 +161,8 @@ export const ShoesScreen = () => {
                   </ul>
 
                   {
-                    ( shoe.id !== searchCurrentBagItem() || itemColor.color_name !== searchCurrentBagItemByColor() )
+                    itemColor.checked !== searchCurrentBagItemByColor()
+
                     ? <button className="btn add-to-bag" onClick={addToBag} disabled={isSaving}>
                         <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M21.0569 4.26554H9.3812C8.27914 4.26554 7.45043 4.53889 6.89506 5.08558C6.3397 5.63228 6.06202 6.45231 6.06202 7.54568V11.1642C6.99052 11.1642 7.86479 11.34 8.68483 11.6914C9.50487 12.0429 10.2273 12.531 10.8521 13.1557C11.4768 13.7805 11.965 14.5029 12.3164 15.323C12.6678 16.143 12.8436 17.0173 12.8436 17.9458C12.8436 18.5532 12.7633 19.139 12.6028 19.703C12.4422 20.267 12.2188 20.8007 11.9324 21.304H21.4214C22.3499 21.304 23.0745 21.0307 23.5951 20.484C24.1158 19.9373 24.3761 19.1173 24.3761 18.0239V7.54568C24.3761 6.45231 24.0984 5.63228 23.5431 5.08558C22.9877 4.53889 22.159 4.26554 21.0569 4.26554ZM10.8781 4.36967H12.7525C12.7525 3.91844 12.8653 3.5106 13.0909 3.14613C13.3165 2.78167 13.6137 2.49314 13.9825 2.28054C14.3513 2.06793 14.7613 1.96163 15.2126 1.96163C15.6638 1.96163 16.076 2.06793 16.4491 2.28054C16.8223 2.49314 17.1195 2.78167 17.3407 3.14613C17.562 3.5106 17.6727 3.91844 17.6727 4.36967H19.56C19.56 3.61472 19.3604 2.92051 18.9613 2.28704C18.5621 1.65358 18.0328 1.14594 17.3733 0.764118C16.7138 0.38231 15.9935 0.191406 15.2126 0.191406C14.4316 0.191406 13.7135 0.38231 13.0583 0.764118C12.4032 1.14594 11.876 1.65358 11.4768 2.28704C11.0777 2.92051 10.8781 3.61472 10.8781 4.36967Z" fill="none"/>

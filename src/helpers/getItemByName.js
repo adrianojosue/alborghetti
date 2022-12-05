@@ -1,12 +1,15 @@
-import { shoes } from '../data/shoes_v2';
+import { useSelector } from 'react-redux';
+import { itemsData } from '../data/itemsData';
 
-export const getItemByName = (name = '') => {
+export const GetItemByName = (description = '') => {
+
+    const { lang } = useSelector( state => state.lang );
     
-    name = name.toLowerCase().trim();
-    if (name.length === 0 ) return [];
+    description = description.toLowerCase().trim();
+    if (description.length === 0 ) return [];
 
-    return shoes.filter(
-        shoe => shoe.name.toLowerCase().includes( name )
+    return itemsData.filter(
+        shoe => shoe.description[lang].toLowerCase().includes( description )
     );
 
 }

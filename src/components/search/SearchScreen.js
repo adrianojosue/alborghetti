@@ -2,7 +2,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import queryString from 'query-string';
 
 import { useForm } from '../../hooks/useForm';
-import { getItemByName } from '../../helpers/getItemByName';
+import { GetItemByName } from '../../helpers/GetItemByName';
 import { ShoesCards } from '../../components/shoes/ShoesCards';
 
 import { motion } from "framer-motion";
@@ -15,7 +15,7 @@ export const SearchScreen = () => {
   const intl = useIntl();
 
   const { q = '' } = queryString.parse( location.search );
-  const shoes = getItemByName(q);
+  const shoes = GetItemByName(q);
 
   const { searchText, onInputChange } = useForm({
     searchText: q

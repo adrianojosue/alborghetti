@@ -49,8 +49,13 @@ span {
                 align-self: stretch;
             }
             .info {
+                span {
+                    font-weight: normal;
+                    text-transform: uppercase;
+                }
                 .price {
                     margin-top: $size_small;
+                    font-weight: bold;
                 }
             }
         }

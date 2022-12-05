@@ -33,8 +33,11 @@
     "App.InputPasswordPlaceholder": "Password",
     "App.Logout": "Logout",
 
+    "Item.Box": "Box",
+
     "WhatsNewScreen.WelcomeMessage": "Welcome",
     "WhatsNewScreen.NewArrivals": "New arrivals",
+    "WhatsNewScreen.SeeAllItems": "See all cigars",
 
     "Help.HelloMessage": "How can we help you",
     "Help.ContactMessage": "Contact aur customer service",
@@ -52,13 +55,11 @@
     "AccountScreen.UserMessage": "Here you can manage your info",
 
     "Menu.SectionTitle": "Sections",
-    "Menu.SectionTitleTwo": "Shoes",
     "Menu.WhatsNew": "What's new?",
-    "Menu.SectionMen": "Men",
-    "Menu.SectionWomen": "Women",
+    "Menu.SectionMen": "Cigars",
 
     "SearchScreen.SearchInput": "Search products...",
-    "SearchScreen.IndicationMessage": "Search by type or characteristic, like: Shoe, Leather, etc.",
+    "SearchScreen.IndicationMessage": "Search by type or characteristic, like: Cigar, Pure, etc.",
     "SearchScreen.errorMessage": "No items with",
 
     "bagScreen.FilledBagMessage": "YOUR BAG",

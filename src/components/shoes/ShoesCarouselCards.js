@@ -1,34 +1,18 @@
-import { /* useEffect, */ useMemo, useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
-
-// Test
-
-/* import { useDispatch, useSelector } from 'react-redux';
-import { getItems } from '../../store/slices/items'; */
-
-// Test
-
 import { getItemsBy } from '../../selectors/getItemsBy';
 import { ShoesCards } from './ShoesCards';
+import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 
 export const ShoesCarouselCards = ({ type }) => {
 
-    // Test
-
-    /* const dispatch = useDispatch();
-    const { isLoading, items = [], page } = useSelector( state => state.items );
-    useEffect(() => {
-        dispatch( getItems() )
-    }); */
-
-    // Test
-
     const shoes = useMemo(() => getItemsBy(type), [type]);
 
-    const scrollableRefContainer = useRef([null]); // null
+    const scrollableRefContainer = useRef([null]);
 
     const [onScrollLeft, setOnScrollLeft] = useState(0);
-    const [onScrollLeftEnding, setOnScrollLeftEnding] = useState();
+    const [onScrollLeftEnding, setOnScrollLeftEnding] = useState(null);
 
     const prevScroll = () => {
 
@@ -63,7 +47,6 @@ export const ShoesCarouselCards = ({ type }) => {
         <>
             <section ref={ scrollableRefContainer } onScroll={ onScroll } className="cards-carousel">
 
-                <>
                     <AnimatePresence mode='wait' initial={false}>
                         {   onScrollLeft !== 0 &&
                             <motion.button
@@ -85,9 +68,7 @@ export const ShoesCarouselCards = ({ type }) => {
                             </motion.button>
                         }
                     </AnimatePresence>
-                </>
 
-                <>
                     <AnimatePresence mode='wait'>
                         {
                             onScrollLeftEnding !== onScrollLeft &&
@@ -110,7 +91,6 @@ export const ShoesCarouselCards = ({ type }) => {
                             </motion.button>
                         }
                     </AnimatePresence>
-                </>
 
                 {
                     shoes.map( shoe => (
@@ -123,6 +103,12 @@ export const ShoesCarouselCards = ({ type }) => {
                         </div>
                     ))
                 }
+
+                <div className="card-carousel_container">
+                    <Link to='/cigars'>
+                        <article className='card card_more-items'><span>+</span><p><FormattedMessage id='WhatsNewScreen.SeeAllItems'/></p></article>
+                    </Link>
+                </div>
 
             </section>
         </>

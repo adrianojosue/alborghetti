@@ -3,9 +3,9 @@ import { useMemo } from 'react';
 import { getShoesByGender } from '../../selectors/getShoesByGender';
 import { ShoesCards } from './ShoesCards';
 
-export const ShoesList = ({ gender }) => {
+export const ShoesList = ({ type }) => {
 
-    const shoes = useMemo(() => getShoesByGender( gender ), [gender]);
+    const shoes = useMemo(() => getShoesByGender( type ), [ type ]);
 
     return (
         <>

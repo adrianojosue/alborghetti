@@ -1,15 +1,17 @@
-import { shoes } from '../data/shoes_v2';
+import { itemsData } from '../data/itemsData';
 
-export const getShoesByGender = ( gender ) => {
+export const getShoesByGender = ( type ) => {
 
-    const validGenders = ['mens', 'womens', 'unisex'];
+    const validGenders = [
+        'cigar',
+    ];
 
-    if ( !validGenders.includes( gender ) ) {
-        throw new Error( `${gender} is not a valid gender` );
+    if ( !validGenders.includes( type ) ) {
+        throw new Error( `${type} is not a valid gender` );
     }
 
-    const sortByMoreNew = shoes.sort((a, b) => a.launched_at > b.launched_at ? -1 : 1)
+    const sortByMoreNew = itemsData.sort((a, b) => a.launched > b.launched ? -1 : 1)
 
-    return sortByMoreNew.filter( shoe => shoe.gender[0].toLowerCase().trim() === gender );
+    return sortByMoreNew.filter( shoe => shoe.type.en.toLowerCase().trim() === type );
 
 };

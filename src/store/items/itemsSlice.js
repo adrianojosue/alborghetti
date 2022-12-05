@@ -14,8 +14,12 @@ export const itemsSlice = createSlice({
         setItems: (state, action) => {
             state.isLoading = false;
             state.items = action.payload;
-        }
+        },
+        onLogoutClearItems: (state) => {
+            state.isLoading = false;
+            state.items = [];
+        },
     },
 })
 
-export const { startLoadingItems, setItems } = itemsSlice.actions;
+export const { startLoadingItems, setItems, onLogoutClearItems } = itemsSlice.actions;

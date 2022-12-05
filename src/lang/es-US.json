@@ -5,7 +5,7 @@
 
     "Auth.SignInMessage": "Inicia sesión",
     "Auth.PasswordInputMessage": "Contraseña",
-    "Auth.ResetEmailMessage": "Envíame un email para cambiar la contraseña",
+    "Auth.ResetEmailMessage": "Envíame un correo electrónico para restablecer mi contraseña",
     "Auth.ResetEmailDone": "Listo, revisa tu email para cambiar tu contraseña",
     "Auth.ContinueButtonMessage": "Continuar",
     "Auth.OrOptionMessage": "o",
@@ -33,8 +33,11 @@
     "App.InputPasswordPlaceholder": "Contraseña",
     "App.Logout": "Cerrar sesión",
 
+    "Item.Box": "Caja",
+
     "WhatsNewScreen.WelcomeMessage": "Bienvenido",
     "WhatsNewScreen.NewArrivals": "Nuevos lanzamientos",
+    "WhatsNewScreen.SeeAllItems": "Ver todos los cigarros",
 
     "Help.HelloMessage": "¿En qué podemos ayudarte",
     "Help.ContactMessage": "Contacte nuestro servicio de atención al cliente",
@@ -43,7 +46,7 @@
     "Help.ScheduleWeekend": "Sáb",
 
     "AboutUs.title": "Sobre nosotros",
-    "AboutUs.Info": "Nuestros habanos se han elaborado tras una esmerada selección de las hojas de capa, tripa y capote de la República Dominicana, y producidos por expertos torcedores dominicanos.",
+    "AboutUs.Info": "Nuestros cigarros se han elaborado tras una esmerada selección de las hojas de capa, tripa y capote de la República Dominicana, y producidos por expertos torcedores dominicanos.",
 
     "Footer.MenuAbout": "Nosotros",
     "Footer.MenuHelp": "Ayuda",
@@ -52,13 +55,11 @@
     "AccountScreen.UserMessage": "Aquí puedes administrar tu información",
 
     "Menu.SectionTitle": "Secciones",
-    "Menu.SectionTitleTwo": "Zapatos",
     "Menu.WhatsNew": "¿Qué hay de nuevo?",
-    "Menu.SectionMen": "Hombre",
-    "Menu.SectionWomen": "Mujer",
+    "Menu.SectionMen": "Cigarros",
 
     "SearchScreen.SearchInput": "Buscar productos...",
-    "SearchScreen.IndicationMessage": "Busque por tipo o característica, como: Zapato, Cuero, etc.",
+    "SearchScreen.IndicationMessage": "Busque por tipo o característica, como: Cigarro, Puro, etc.",
     "SearchScreen.errorMessage": "Ningún producto con",
 
     "bagScreen.FilledBagMessage": "TU BOLSA",
