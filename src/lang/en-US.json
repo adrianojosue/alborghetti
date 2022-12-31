@@ -60,7 +60,8 @@
 
     "SearchScreen.SearchInput": "Search products...",
     "SearchScreen.IndicationMessage": "Search by type or characteristic, like: Cigar, Pure, etc.",
-    "SearchScreen.errorMessage": "No items with",
+    "SearchScreen.ErrorMessage": "No items with",
+    "SearchScreen.ResultMessage": "Result of",
 
     "bagScreen.FilledBagMessage": "YOUR BAG",
     "bagScreen.EmptyBagMessage": "YOUR BAG IS EMPTY",

@@ -60,7 +60,8 @@
 
     "SearchScreen.SearchInput": "Buscar productos...",
     "SearchScreen.IndicationMessage": "Busque por tipo o característica, como: Cigarro, Puro, etc.",
-    "SearchScreen.errorMessage": "Ningún producto con",
+    "SearchScreen.ErrorMessage": "Ningún producto con",
+    "SearchScreen.ResultMessage": "Resultado de",
 
     "bagScreen.FilledBagMessage": "TU BOLSA",
     "bagScreen.EmptyBagMessage": "TU BOLSA ESTÁ VACÍA",

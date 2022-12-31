@@ -87,7 +87,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: $size_medium;
-    padding: $size_medium;
+    margin-top: $size_medium;
     justify-content: center;
 }
 
